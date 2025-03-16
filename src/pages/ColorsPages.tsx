@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Stack, Typography, Grid } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import ColorCard from "../components/ColorCard";
+import Grid from "@mui/material/Grid2";
 
 // Helper function to convert CSS color to hex if needed
 const toHex = (color) => {
@@ -34,6 +35,12 @@ const ColorPage = () => {
       hex: toHex(theme.palette.primary.light),
       copyValue: "theme.palette.primary.light",
     },
+    {
+      title: "Update Color",
+      backgroundColor: theme.palette.primary.light,
+      hex: toHex(theme.palette.primary.light),
+      copyValue: "theme.palette.primary.light",
+    },
   ];
 
   const primaryTextColors = [
@@ -51,6 +58,12 @@ const ColorPage = () => {
     },
     {
       title: "Disabled Text",
+      backgroundColor: theme.palette.text.disabled,
+      hex: toHex(theme.palette.text.disabled),
+      copyValue: "theme.palette.text.disabled",
+    },
+    {
+      title: "Update Color",
       backgroundColor: theme.palette.text.disabled,
       hex: toHex(theme.palette.text.disabled),
       copyValue: "theme.palette.text.disabled",
@@ -76,6 +89,12 @@ const ColorPage = () => {
       hex: toHex(theme.palette.secondary.light),
       copyValue: "theme.palette.secondary.light",
     },
+    {
+      title: "Update Color",
+      backgroundColor: theme.palette.secondary.light,
+      hex: toHex(theme.palette.secondary.light),
+      copyValue: "theme.palette.secondary.light",
+    },
   ];
 
   const successColors = [
@@ -93,6 +112,12 @@ const ColorPage = () => {
     },
     {
       title: "Success Light",
+      backgroundColor: theme.palette.success.light,
+      hex: toHex(theme.palette.success.light),
+      copyValue: "theme.palette.success.light",
+    },
+    {
+      title: "Update Color",
       backgroundColor: theme.palette.success.light,
       hex: toHex(theme.palette.success.light),
       copyValue: "theme.palette.success.light",
@@ -118,6 +143,12 @@ const ColorPage = () => {
       hex: toHex(theme.palette.warning.light),
       copyValue: "theme.palette.warning.light",
     },
+    {
+      title: "Update Color",
+      backgroundColor: theme.palette.warning.light,
+      hex: toHex(theme.palette.warning.light),
+      copyValue: "theme.palette.warning.light",
+    },
   ];
 
   const errorColors = [
@@ -135,6 +166,12 @@ const ColorPage = () => {
     },
     {
       title: "Error Light",
+      backgroundColor: theme.palette.error.light,
+      hex: toHex(theme.palette.error.light),
+      copyValue: "theme.palette.error.light",
+    },
+    {
+      title: "Update Color",
       backgroundColor: theme.palette.error.light,
       hex: toHex(theme.palette.error.light),
       copyValue: "theme.palette.error.light",
@@ -160,6 +197,12 @@ const ColorPage = () => {
       hex: toHex(theme.palette.info.light),
       copyValue: "theme.palette.info.light",
     },
+    {
+      title: "Update Color",
+      backgroundColor: theme.palette.info.light,
+      hex: toHex(theme.palette.info.light),
+      copyValue: "theme.palette.info.light",
+    },
   ];
 
   const [copySuccess, setCopySuccess] = useState(false);
@@ -179,7 +222,7 @@ const ColorPage = () => {
       <Typography variant="h2" fontWeight="bold" mb={3}>
         Colors
       </Typography>
-      <Typography mb={6}>
+      <Typography variant="body2" mb={4}>
         Color system defines a palette that reflects the brand’s identity and
         ensures a cohesive visual experience across the entire product. It
         provides primary, secondary, and accent colors, along with variants for
@@ -188,13 +231,13 @@ const ColorPage = () => {
         clarity, and emotional impact, while maintaining balance and harmony
         across all design elements.
       </Typography>
-      <Typography variant="h5" mb={1.5}>
+      <Typography variant="h6" mb={0.5}>
         Primary Text Colors
       </Typography>
-      <Grid container spacing={3} mb={3}>
+      <Grid container spacing={2} mb={3}>
         {primaryTextColors.map(
           ({ title, backgroundColor, hex, copyValue }, index) => (
-            <Grid item xs={12} md={4} key={index}>
+            <Grid size={{ xs: 12, md: 3 }} key={index}>
               <React.Fragment>
                 <ColorCard
                   title={title}
@@ -210,12 +253,12 @@ const ColorPage = () => {
           )
         )}
       </Grid>
-      <Typography variant="h5" mb={1.5}>
+      <Typography variant="h6" mb={0.5}>
         Primary Colors
       </Typography>
-      <Grid container spacing={3} mb={3}>
+      <Grid container spacing={2} mb={3}>
         {colors.map(({ title, backgroundColor, hex, copyValue }, index) => (
-          <Grid item xs={12} md={4} key={index}>
+          <Grid size={{ xs: 12, md: 3 }} key={index}>
             <React.Fragment>
               <ColorCard
                 title={title}
@@ -230,13 +273,13 @@ const ColorPage = () => {
           </Grid>
         ))}
       </Grid>
-      <Typography variant="h5" mb={1.5}>
+      <Typography variant="h6" mb={0.5}>
         Secondary Colors
       </Typography>
-      <Grid container spacing={3} mb={3}>
+      <Grid container spacing={2} mb={3}>
         {secondaryColors.map(
           ({ title, backgroundColor, hex, copyValue }, index) => (
-            <Grid item xs={12} md={4} key={index}>
+            <Grid size={{ xs: 12, md: 3 }} key={index}>
               <React.Fragment>
                 <ColorCard
                   title={title}
@@ -252,13 +295,13 @@ const ColorPage = () => {
           )
         )}
       </Grid>
-      <Typography variant="h5" mb={1.5}>
+      <Typography variant="h6" mb={0.5}>
         Success Colors
       </Typography>
-      <Grid container spacing={3} mb={3}>
+      <Grid container spacing={2} mb={3}>
         {successColors.map(
           ({ title, backgroundColor, hex, copyValue }, index) => (
-            <Grid item xs={12} md={4} key={index}>
+            <Grid size={{ xs: 12, md: 3 }} key={index}>
               <React.Fragment>
                 <ColorCard
                   title={title}
@@ -274,13 +317,13 @@ const ColorPage = () => {
           )
         )}
       </Grid>
-      <Typography variant="h5" mb={1.5}>
+      <Typography variant="h6" mb={0.5}>
         Warning Colors
       </Typography>
-      <Grid container spacing={3} mb={3}>
+      <Grid container spacing={2} mb={3}>
         {warningColors.map(
           ({ title, backgroundColor, hex, copyValue }, index) => (
-            <Grid item xs={12} md={4} key={index}>
+            <Grid size={{ xs: 12, md: 3 }} key={index}>
               <React.Fragment>
                 <ColorCard
                   title={title}
@@ -296,13 +339,13 @@ const ColorPage = () => {
           )
         )}
       </Grid>
-      <Typography variant="h5" mb={1.5}>
+      <Typography variant="h6" mb={0.5}>
         Error Colors
       </Typography>
-      <Grid container spacing={3} mb={3}>
+      <Grid container spacing={2} mb={3}>
         {errorColors.map(
           ({ title, backgroundColor, hex, copyValue }, index) => (
-            <Grid item xs={12} md={4} key={index}>
+            <Grid size={{ xs: 12, md: 3 }} key={index}>
               <React.Fragment>
                 <ColorCard
                   title={title}
@@ -318,12 +361,12 @@ const ColorPage = () => {
           )
         )}
       </Grid>
-      <Typography variant="h5" mb={1.5}>
+      <Typography variant="h6" mb={0.5}>
         Info Colors
       </Typography>
-      <Grid container spacing={3} mb={3}>
+      <Grid container spacing={2} mb={3}>
         {infoColors.map(({ title, backgroundColor, hex, copyValue }, index) => (
-          <Grid item xs={12} md={4} key={index}>
+          <Grid size={{ xs: 12, md: 3 }} key={index}>
             <React.Fragment>
               <ColorCard
                 title={title}

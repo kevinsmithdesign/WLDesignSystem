@@ -27,10 +27,10 @@ const ColorCard = ({
   return (
     <Card
       sx={{
-        p: 2,
+        p: 0,
         background: "#fff",
         boxShadow: "none",
-        borderRadius: "24px",
+        borderRadius: "10px",
         flex: 1,
         display: "flex",
         flexDirection: "column",
@@ -38,11 +38,11 @@ const ColorCard = ({
     >
       <Box
         sx={{
-          height: "200px",
+          height: "150px",
           background: backgroundColor,
-          borderRadius: "16px 16px 16px 0px",
+          borderRadius: "10px 10px 0px 0px",
           width: "100%",
-          mb: 1,
+          // mb: 1,
           position: "relative",
         }}
       >
@@ -61,11 +61,13 @@ const ColorCard = ({
           </IconButton>
         </Tooltip>
       </Box>
-      <Box sx={{ px: 1, pt: 1, pb: 2 }}>
+      <Box sx={{ py: 2, px: 2.5 }}>
         <Typography variant="h6" fontWeight="bold" mb={0.5}>
           {title}
         </Typography>
-        <Typography>{hex}</Typography>
+        <Typography variant="body2" pb={1}>
+          {hex}
+        </Typography>
       </Box>
     </Card>
   );

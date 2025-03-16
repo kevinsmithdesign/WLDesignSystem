@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Container, Typography, Box, Divider } from "@mui/material";
 
 const ContactPage = () => {
-  return <Container>Contact Page</Container>;
+  return <Stack sx={{ maxWidth: "1120px" }}>Control Page</Stack>;
 };
 
 export default ContactPage;

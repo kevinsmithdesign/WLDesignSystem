@@ -164,11 +164,11 @@ const TypographyPage = () => {
   `;
 
   return (
-    <Stack>
+    <Stack sx={{ maxWidth: "1120px" }}>
       <Typography variant="h2" fontWeight="bold" mb={3}>
         Typography
       </Typography>
-      <Typography mb={6}>
+      <Typography variant="body2" mb={6}>
         Typography system establishes a clear hierarchy and readability
         throughout the product by defining font styles, sizes, weights, and
         spacing. It includes guidelines for headings, body text, captions, and
@@ -225,7 +225,7 @@ const TypographyPage = () => {
 
           <Grid container spacing={6}>
             <Grid size={{ xs: 12, md: 7 }}>
-              <Typography>
+              <Typography variant="body2">
                 Roboto is a modern, versatile sans-serif typeface with clean
                 geometry and natural curves. Its friendly yet professional tone
                 suits digital and print, offering various weights and styles for

@@ -38,7 +38,7 @@ const ButtonPage = () => {
   };
 
   return (
-    <Stack>
+    <Stack sx={{ maxWidth: "1120px" }}>
       <Typography variant="h2" fontWeight="bold" mb={3}>
         Button
       </Typography>

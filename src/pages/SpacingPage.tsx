@@ -48,11 +48,11 @@ const SpacingPage = () => {
   };
 
   return (
-    <Stack>
+    <Stack sx={{ maxWidth: "1120px" }}>
       <Typography variant="h2" fontWeight="bold" mb={3}>
         Spacing
       </Typography>
-      <Typography mb={6}>
+      <Typography variant="body2" mb={6}>
         Spacing system ensures consistent layout and alignment by defining a set
         of standard values for padding, margin, and gaps. It creates a unified
         structure across the product, making designs visually appealing and easy
@@ -71,7 +71,7 @@ const SpacingPage = () => {
       </Tabs>
 
       <CustomTabPanel value={value} index={0}>
-        <Grid container spacing={3}>
+        <Grid container spacing={2}>
           {spacing.map(({ size, pm }) => (
             <Grid
               size={{ xs: 12, sm: 6, md: 3 }}
@@ -83,10 +83,9 @@ const SpacingPage = () => {
             >
               <Card
                 sx={{
-                  p: 2,
                   background: "#fff",
                   boxShadow: "none",
-                  borderRadius: "24px",
+                  borderRadius: "12px",
                   flex: 1,
                   display: "flex",
                   flexDirection: "column",
@@ -94,17 +93,17 @@ const SpacingPage = () => {
               >
                 <Box
                   sx={{
-                    height: "180px",
+                    height: "150px",
                     // background: `${description}`,
                     background: "#eee",
-                    borderRadius: "16px 16px 16px 0px",
+                    borderRadius: "12px 12px 0px 0px",
                     width: "100%",
                     mb: 1,
                   }}
                 ></Box>
-                <Box sx={{ px: 1, pt: 1, pb: 2 }}>
+                <Box sx={{ py: 2, px: 2.5 }}>
                   <Typography fontWeight="bold">{size}</Typography>
-                  <Typography>{pm}</Typography>
+                  <Typography pb={1}>{pm}</Typography>
                 </Box>
               </Card>
             </Grid>
