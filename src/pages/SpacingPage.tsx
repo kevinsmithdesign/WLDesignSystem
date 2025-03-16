@@ -28,14 +28,14 @@ function a11yProps(index) {
 }
 
 const spacing = [
-  { size: "8px", pm: "m={1} or p={1}" },
-  { size: "16px", pm: "m={2} or p={2}" },
-  { size: "24px", pm: "m={3} or p={3}" },
-  { size: "32px", pm: "m={4} or p={4}" },
-  { size: "40px", pm: "m={5} or p={5}" },
-  { size: "48px", pm: "m={6} or p={6}" },
-  { size: "64px", pm: "m={8} or p={8}" },
-  { size: "96px", pm: "m={12} or p={12}" },
+  { size: "4px", pm: "m={1} or p={1}" },
+  { size: "8px", pm: "m={2} or p={2}" },
+  { size: "16px", pm: "m={3} or p={3}" },
+  { size: "24px", pm: "m={4} or p={4}" },
+  { size: "32px", pm: "m={5} or p={5}" },
+  { size: "40px", pm: "m={6} or p={6}" },
+  { size: "48px", pm: "m={8} or p={8}" },
+  { size: "64px", pm: "m={9} or p={9}" },
 ];
 
 const SpacingPage = () => {
@@ -95,15 +95,29 @@ const SpacingPage = () => {
                   sx={{
                     height: "150px",
                     // background: `${description}`,
-                    background: "#eee",
+                    background: theme.palette.primary.main,
                     borderRadius: "12px 12px 0px 0px",
                     width: "100%",
-                    mb: 1,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
-                ></Box>
+                >
+                  <Box
+                    sx={{
+                      height: size,
+                      width: size,
+                      background: theme.palette.primary.light,
+                      border: "1px solid #fff",
+                      borderRadius: "2px",
+                    }}
+                  ></Box>
+                </Box>
                 <Box sx={{ py: 2, px: 2.5 }}>
                   <Typography fontWeight="bold">{size}</Typography>
-                  <Typography pb={1}>{pm}</Typography>
+                  <Typography variant="body2" pb={1}>
+                    {pm}
+                  </Typography>
                 </Box>
               </Card>
             </Grid>

@@ -24,7 +24,7 @@ const LeftNav = () => {
     { to: "/colors", title: "Colors" },
     { to: "/typography", title: "Typography" },
     { to: "/spacing", title: "Spacing" },
-    { to: "/border", title: "Border" },
+    { to: "/border", title: "Border Radius" },
     { to: "/grid", title: "Grid" },
   ];
 

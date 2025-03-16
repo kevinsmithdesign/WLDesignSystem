@@ -32,10 +32,10 @@ const borderRadius = [
   { size: "4px", pm: "mediumSmall" },
   { size: "6px", pm: "medium" },
   { size: "8px", pm: "mediumLarge" },
-  { size: "16px", pm: "large" },
-  { size: "20px", pm: "extraLarge" },
-  { size: "24px", pm: "xxl" },
-  { size: "60px", pm: "round" },
+  { size: "10px", pm: "large" },
+  { size: "12px", pm: "extraLarge" },
+  { size: "16px", pm: "xxl" },
+  // { size: "60px", pm: "round" },
   { size: "50%", pm: "circle" },
 ];
 
@@ -51,9 +51,16 @@ const BorderPage = () => {
   return (
     <Stack sx={{ maxWidth: "1120px" }}>
       <Typography variant="h2" fontWeight="bold" mb={3}>
-        Border
+        Border Radius
       </Typography>
-      <Typography mb={6}>Description</Typography>
+      <Typography variant="body2" mb={4}>
+        Border Radius system defines the curvature of UI elements, contributing
+        to the product's overall style and tone. It enhances the visual appeal
+        by softening edges and adding a polished look to components such as
+        buttons, cards, and inputs. Consistent use of border radius helps
+        achieve a cohesive and approachable design, providing a sense of
+        continuity and harmony across all interactions.
+      </Typography>
       <Tabs
         value={value}
         onChange={handleChange}
@@ -65,10 +72,10 @@ const BorderPage = () => {
       </Tabs>
 
       <CustomTabPanel value={value} index={0}>
-        <Grid container spacing={3} pb={6}>
+        <Grid container spacing={2} pb={6}>
           {borderRadius.map(({ size, pm }) => (
             <Grid
-              size={{ xs: 12, sm: 6, md: 4 }}
+              size={{ xs: 12, sm: 6, md: 3 }}
               key={size}
               sx={{
                 display: "flex",
@@ -77,10 +84,9 @@ const BorderPage = () => {
             >
               <Card
                 sx={{
-                  p: 2,
                   background: "#fff",
                   boxShadow: "none",
-                  borderRadius: "24px",
+                  borderRadius: "12px",
                   flex: 1,
                   display: "flex",
                   flexDirection: "column",
@@ -88,17 +94,31 @@ const BorderPage = () => {
               >
                 <Box
                   sx={{
-                    height: "240px",
+                    height: "150px",
                     // background: `${description}`,
-                    background: "#eee",
-                    borderRadius: "16px 16px 16px 0px",
+                    background: theme.palette.primary.main,
+                    borderRadius: "12px 12px 0px 0px",
                     width: "100%",
-                    mb: 1,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
-                ></Box>
-                <Box sx={{ px: 1, pt: 1, pb: 2 }}>
+                >
+                  <Box
+                    sx={{
+                      height: "48px",
+                      width: "48px",
+                      background: theme.palette.primary.light,
+                      border: "1px solid #fff",
+                      borderRadius: size,
+                    }}
+                  ></Box>
+                </Box>
+                <Box sx={{ py: 2, px: 2.5 }}>
                   <Typography fontWeight="bold">{size}</Typography>
-                  <Typography>{pm}</Typography>
+                  <Typography variant="body2" pb={1}>
+                    {pm}
+                  </Typography>
                 </Box>
               </Card>
             </Grid>
