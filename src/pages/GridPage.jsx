@@ -28,6 +28,7 @@ function a11yProps(index) {
 }
 
 const GridPage = () => {
+  const gridRow = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   const theme = useTheme();
 
   const [value, setValue] = React.useState(0);
@@ -59,7 +60,41 @@ const GridPage = () => {
       </Tabs>
 
       <CustomTabPanel value={value} index={0}>
-        Design
+        <Box
+          sx={{
+            display: "flex",
+            // background: "#f3f7ff",
+            background: "#e9f1ff",
+            p: 2,
+            mb: 2,
+            height: "400px",
+          }}
+        >
+          {gridRow.map((test, index) => (
+            <Box
+              key={test}
+              sx={{
+                display: "flex",
+                flex: 1,
+                // background: "#e9f1ff",
+                background: "#f3f7ff",
+
+                marginRight: index !== gridRow.length - 1 ? "16px" : "0", // Remove marginRight for last item
+                alignItems: "center",
+                justifyContent: "center",
+                borderRight: `1px solid ${theme.palette.primary.main}`,
+                borderLeft: `1px solid ${theme.palette.primary.main}`,
+              }}
+            >
+              <Typography
+                variant="body2"
+                sx={{ textAlign: "center", color: theme.palette.primary.main }}
+              >
+                {test}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         Code

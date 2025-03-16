@@ -108,8 +108,10 @@ const SpacingPage = () => {
                       height: size,
                       width: size,
                       background: theme.palette.primary.light,
-                      border: "1px solid #fff",
-                      borderRadius: "2px",
+                      // border: "1px solid #fff",
+                      // borderRadius: "2px",
+                      borderRight: "1px solid #fff",
+                      borderLeft: "1px solid #fff",
                     }}
                   ></Box>
                 </Box>

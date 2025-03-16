@@ -104,15 +104,29 @@ const BorderPage = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <Box
-                    sx={{
-                      height: "48px",
-                      width: "48px",
-                      background: theme.palette.primary.light,
-                      border: "1px solid #fff",
-                      borderRadius: size,
-                    }}
-                  ></Box>
+                  <Box sx={{ position: "relative" }}>
+                    <Box
+                      sx={{
+                        background: "rgba(0, 0, 0, 0.09)",
+                        height: "32px",
+                        width: "32px",
+                        borderRadius: "50%",
+                        position: "absolute",
+                        left: "-13px",
+                        top: "-13px",
+                        zIndex: 100,
+                      }}
+                    ></Box>
+                    <Box
+                      sx={{
+                        height: "48px",
+                        width: "48px",
+                        background: theme.palette.primary.light,
+                        // border: "1px solid #fff",
+                        borderRadius: size,
+                      }}
+                    ></Box>
+                  </Box>
                 </Box>
                 <Box sx={{ py: 2, px: 2.5 }}>
                   <Typography fontWeight="bold">{size}</Typography>
