@@ -6,7 +6,17 @@ import {
   Link,
   useNavigate,
 } from "react-router-dom";
-import { Stack, Typography, Button, Divider } from "@mui/material";
+import {
+  Stack,
+  Typography,
+  Button,
+  Select,
+  MenuItem,
+  Menu,
+  FormControl,
+  InputLabel,
+} from "@mui/material";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useState } from "react";
 import { ThemeProviderDesignSystem, useTheme } from "./themes/ThemeContext";
 import DesignSystemOverviewPage from "./pages/DesignSystemOverviewPage";
@@ -21,7 +31,7 @@ import ChipPage from "./pages/ChipPage";
 import TextFieldPage from "./pages/TextFieldPage";
 import ControlsPage from "./pages/ControlsPage";
 import DesignPrinciplesPage from "./pages/DesignPrinciplesPage";
-import DesignSystemHamburgerBtn from "./components/DesignSystemHamburgerBtn";
+// import DesignSystemHamburgerBtn from "./components/DesignSystemHamburgerBtn";
 
 const links = [
   { to: "/", title: "Overview" },
@@ -44,20 +54,29 @@ const componentsLink = [
   { to: "/alert", title: "Alert" },
 ];
 
+// Available themes for the selector
+const themeOptions = ["Theme One", "Theme Two", "Theme Three", "Theme Four"];
+
 // This is now a separate component used inside the BrowserRouter context
 const WhiteLabelContent = () => {
   const { themeName, setThemeName, theme } = useTheme();
   const navigate = useNavigate();
-  const [toggle, setToggle] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
 
-  const toggleHamburgerMenu = () => {
-    setToggle((prevToggle) => !prevToggle);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   const handleThemeChange = (theme) => {
     setThemeName(theme);
-    setToggle(false);
+    handleClose();
   };
 
   return (
@@ -80,16 +99,53 @@ const WhiteLabelContent = () => {
           </Stack>
           <Stack>
             <Button
+              id="theme-menu-button"
+              aria-controls={open ? "theme-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              variant="contained"
+              disableElevation
+              onClick={handleClick}
+              endIcon={<KeyboardArrowDownIcon />}
               sx={{
                 background: theme.palette.primary.contrastText,
+                color: theme.palette.primary.main,
+                fontWeight: "bold",
                 "&:hover": {
                   background: theme.palette.primary.contrastText,
+                  boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
                 },
               }}
-              onClick={toggleHamburgerMenu}
             >
               Change Theme
             </Button>
+            <Menu
+              id="theme-menu"
+              MenuListProps={{
+                "aria-labelledby": "theme-menu-button",
+              }}
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              PaperProps={{
+                elevation: 3,
+                sx: {
+                  borderRadius: "6px",
+                  minWidth: "180px",
+                  mt: "8px",
+                },
+              }}
+            >
+              {themeOptions.map((option) => (
+                <MenuItem
+                  key={option}
+                  selected={option === themeName}
+                  onClick={() => handleThemeChange(option)}
+                >
+                  {option}
+                </MenuItem>
+              ))}
+            </Menu>
           </Stack>
           <Stack
             sx={{
@@ -107,45 +163,6 @@ const WhiteLabelContent = () => {
           position: "relative",
         }}
       >
-        {toggle && (
-          <Stack
-            sx={{
-              position: "absolute",
-              top: 10,
-              right: 55,
-              zIndex: "1000",
-              background: "#fff",
-              padding: "16px",
-              borderRadius: "8px",
-              width: "160px",
-            }}
-          >
-            <Typography
-              sx={{ paddingBottom: "8px", cursor: "pointer" }}
-              onClick={() => handleThemeChange("Theme One")}
-            >
-              Theme One
-            </Typography>
-            <Typography
-              sx={{ paddingBottom: "8px", cursor: "pointer" }}
-              onClick={() => handleThemeChange("Theme Two")}
-            >
-              Theme Two
-            </Typography>
-            <Typography
-              sx={{ paddingBottom: "8px", cursor: "pointer" }}
-              onClick={() => handleThemeChange("Theme Three")}
-            >
-              Theme Three
-            </Typography>
-            <Typography
-              sx={{ paddingBottom: "8px", cursor: "pointer" }}
-              onClick={() => handleThemeChange("Theme Four")}
-            >
-              Theme Four
-            </Typography>
-          </Stack>
-        )}
         {menuOpen && (
           <Stack>
             <Stack
