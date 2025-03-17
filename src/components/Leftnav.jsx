@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
-import { Stack, Typography } from "@mui/material";
+import { Stack, Typography, Box } from "@mui/material";
 import DesignSystemOverviewPage from "../pages/DesignSystemOverviewPage";
 import ColorPage from "../pages/ColorsPages";
 import TypographyPage from "../pages/TypographyPage";
@@ -37,12 +37,39 @@ const LeftNav = () => {
   ];
 
   return (
-    <Stack flexDirection="column" sx={{ height: "100%", flex: 1 }}>
-      <Stack
-        flexDirection="row"
-        sx={{ flex: 1, borderRight: "1px solid #eee" }}
+    <Box
+      sx={{
+        display: "flex",
+        width: "100%",
+        height: "100vh",
+        position: "relative",
+        paddingTop: "73px", // Account for header
+      }}
+    >
+      <Box
+        sx={{
+          display: "flex",
+          width: "100%",
+          height: "calc(100vh - 73px)",
+          position: "fixed",
+          top: "73px",
+          left: 0,
+          right: 0,
+          bottom: 0,
+        }}
       >
-        <Stack sx={{ width: "260px", display: { xs: "none", md: "flex" } }}>
+        {/* Left Nav */}
+        <Box
+          sx={{
+            width: "260px",
+            height: "100%",
+            background: "#fff",
+            borderRight: "1px solid #eee",
+            overflowY: "auto",
+            display: { xs: "none", md: "block" },
+            flexShrink: 0,
+          }}
+        >
           <Stack mt={8}>
             <Stack sx={{ padding: "0 0 8px 24px" }}>
               <Typography fontWeight="bold">Getting Started</Typography>
@@ -56,6 +83,7 @@ const LeftNav = () => {
                   color: "#222",
                   borderBottom: "1px solid #eee",
                   padding: "16px 24px",
+                  display: "block",
                 }}
                 to={to}
               >
@@ -75,6 +103,7 @@ const LeftNav = () => {
                   color: "#222",
                   borderBottom: "1px solid #eee",
                   padding: "16px 24px",
+                  display: "block",
                 }}
                 to={to}
               >
@@ -94,6 +123,7 @@ const LeftNav = () => {
                   color: "#222",
                   borderBottom: "1px solid #eee",
                   padding: "16px 24px",
+                  display: "block",
                 }}
                 to={to}
               >
@@ -101,10 +131,16 @@ const LeftNav = () => {
               </Link>
             ))}
           </Stack>
-        </Stack>
-        <Stack
+
+          {/* Add dummy content to ensure scrollability */}
+          <Box sx={{ height: "50px" }}></Box>
+        </Box>
+
+        {/* Content Area */}
+        <Box
           sx={{
             flex: 1,
+            height: "100%",
             background: "#f6f6fa",
             padding: "32px 48px",
             overflowY: "auto",
@@ -120,18 +156,16 @@ const LeftNav = () => {
             <Route path="/typography" element={<TypographyPage />} />
             <Route path="/spacing" element={<SpacingPage />} />
             <Route path="/border" element={<BorderPage />} />
-
             <Route path="/button" element={<ButtonPage />} />
             <Route path="/chip" element={<ChipPage />} />
             <Route path="/text-field" element={<TextFieldPage />} />
             <Route path="/controls" element={<ControlsPage />} />
-
             <Route path="/alert" element={<AlertPage />} />
             <Route path="/grid" element={<GridPage />} />
           </Routes>
-        </Stack>
-      </Stack>
-    </Stack>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

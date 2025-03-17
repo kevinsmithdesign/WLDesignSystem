@@ -48,7 +48,14 @@ const WhiteLabelContent = () => {
 
   return (
     <>
-      <Stack sx={{ backgroundColor: theme.palette.primary.main }}>
+      <Stack
+        sx={{
+          backgroundColor: theme.palette.primary.main,
+          position: "fixed",
+          zIndex: 200,
+          width: "100%",
+        }}
+      >
         <Stack
           flexDirection="row"
           sx={{ maxWidth: "1430px", padding: "16px 24px" }}

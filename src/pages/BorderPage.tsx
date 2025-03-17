@@ -49,7 +49,7 @@ const BorderPage = () => {
   };
 
   return (
-    <Stack sx={{ maxWidth: "1120px" }}>
+    <Stack sx={{ maxWidth: "1120px", mb: 8 }}>
       <Typography variant="h2" fontWeight="bold" mb={3}>
         Border Radius
       </Typography>
