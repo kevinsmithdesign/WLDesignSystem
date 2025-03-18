@@ -29,6 +29,48 @@ function a11yProps(index) {
 }
 
 const ButtonPage = () => {
+  const buttonTypes = [
+    {
+      title: "Primary Button (Contained)",
+      subTitle: "When to use",
+
+      bullets: [
+        'For the most important action on a page, like "Submit," "Save," or "Send."',
+        "Use when you want to draw the user's attention to the main call to action.",
+        "Often used in forms, dialog boxes, or places where the user is completing a primary task.",
+      ],
+    },
+    {
+      title: "Secondary Button (Outlined)",
+      subTitle: "When to use",
+
+      bullets: [
+        "For alternative or secondary actions on a page.",
+        "Use when you need to provide options that are important but not the primary focus.",
+        'Often paired with a primary button to offer the user choices like "Cancel" or "Back."',
+      ],
+    },
+    {
+      title: "Text Button",
+      subTitle: "When to use",
+
+      bullets: [
+        "For less prominent actions that don't require emphasis.",
+        "Use for actions that need to be available but shouldn't compete with primary actions.",
+        "Often used in dense UIs, lists, or card actions where space is limited.",
+      ],
+    },
+    {
+      title: "Text Button",
+      subTitle: "When to use",
+
+      bullets: [
+        "For less prominent actions that don't require emphasis.",
+        "Use for actions that need to be available but shouldn't compete with primary actions.",
+        "Often used in dense UIs, lists, or card actions where space is limited.",
+      ],
+    },
+  ];
   const theme = useTheme();
 
   const [value, setValue] = React.useState(0);
@@ -83,8 +125,16 @@ const ButtonPage = () => {
             </Button>
           </Stack>
         </Box>
-        <UsageCard />
-        <UsageCard />
+        <>
+          {buttonTypes.map((buttonType, index) => (
+            <UsageCard
+              key={index}
+              title={buttonType.title}
+              subTitle={buttonType.subTitle}
+              bullets={buttonType.bullets}
+            />
+          ))}
+        </>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         Code
