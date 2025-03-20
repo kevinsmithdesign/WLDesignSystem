@@ -30,10 +30,10 @@ const LeftNav = () => {
 
   const componentsLink = [
     { to: "/button", title: "Button" },
-    { to: "/chip", title: "Chip" },
-    { to: "/text-field", title: "TextField" },
-    { to: "/controls", title: "Controls" },
-    { to: "/alert", title: "Alert" },
+    // { to: "/chip", title: "Chip" },
+    // { to: "/text-field", title: "TextField" },
+    // { to: "/controls", title: "Controls" },
+    // { to: "/alert", title: "Alert" },
   ];
 
   return (

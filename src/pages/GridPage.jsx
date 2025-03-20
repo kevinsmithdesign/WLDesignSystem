@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack, Typography, Tabs, Tab, Box } from "@mui/material";
+import { Stack, Typography, Tabs, Tab, Box, Alert } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import CodeSnippet from "../components/CodeSnippet";
 import Grid from "@mui/material/Grid2";
@@ -326,7 +326,7 @@ const GridPage = () => {
         </Grid>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Code
+        <Alert severity="info">Coming Soon!</Alert>
       </CustomTabPanel>
     </Stack>
   );

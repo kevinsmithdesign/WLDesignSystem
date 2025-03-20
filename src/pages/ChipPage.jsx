@@ -1,9 +1,18 @@
 import React from "react";
-import { Stack, Typography, Tabs, Tab, Box, Button, Chip } from "@mui/material";
+import {
+  Stack,
+  Typography,
+  Tabs,
+  Tab,
+  Box,
+  Button,
+  Chip,
+  Alert,
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import CodeSnippet from "../components/CodeSnippet";
+// import CodeSnippet from "../components/CodeSnippet";
 import Grid from "@mui/material/Grid2";
-import UsageCard from "../components/UsageCard";
+// import UsageCard from "../components/UsageCard";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -106,11 +115,11 @@ const ChipPage = () => {
             </Box>
           </Box>
         </Box>
-        <UsageCard />
-        <UsageCard />
+        {/* <UsageCard />
+        <UsageCard /> */}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Code
+        <Alert severity="info">Coming Soon!</Alert>
       </CustomTabPanel>
     </Stack>
   );
