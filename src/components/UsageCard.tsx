@@ -20,7 +20,7 @@ const UsageCard = ({ index, title, subTitle, bullets, showComponent }) => {
               // width: "260px",
 
               width: { xs: "100%", lg: "260px" },
-              background: "#f6f6f6",
+              background: "#fafafa",
               borderRadius: 3,
               mr: 3,
               display: "flex",
@@ -45,29 +45,6 @@ const UsageCard = ({ index, title, subTitle, bullets, showComponent }) => {
           <Typography variant="h6" mb={1}>
             {subTitle}
           </Typography>
-          {/* <List sx={{ pl: 0, mt: 0 }}>
-            {bullets.map((bullet, index) => (
-              <ListItem
-                key={index}
-                sx={{
-                  display: "list-item",
-                  listStyleType: "disc",
-                  py: 0,
-                  pl: 1,
-                  ml: 2,
-                }}
-                disableGutters
-              >
-                <ListItemText
-                  primary={bullet}
-                  primaryTypographyProps={{
-                    variant: "body1",
-                    component: "span",
-                  }}
-                />
-              </ListItem>
-            ))}
-          </List> */}
           <List sx={{ pl: { xs: 0, lg: 2 } }}>
             {bullets.map((bullet, index) => (
               <ListItem
