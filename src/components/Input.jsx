@@ -47,20 +47,27 @@ const EndIconContainer = styled(Box)(({ theme }) => ({
 
 // The actual input component
 const StyledInput = styled(InputBase)(
-  ({ theme, hasStartIcon, hasEndIcon }) => ({
+  ({ theme, hasStartIcon, hasEndIcon, error }) => ({
     width: "100%",
     "& .MuiInputBase-input": {
       borderRadius: 4,
-      border: "1px solid #E0E3E7",
-      backgroundColor: "#F3F6F9",
+      border: `1px solid ${error ? theme.palette.error.main : "#E0E3E7"}`,
+      backgroundColor: error
+        ? alpha(theme.palette.error.main, 0.08) // soft translucent red
+        : "#F3F6F9",
       padding: "10px 12px",
       paddingLeft: hasStartIcon ? "40px" : "12px",
       paddingRight: hasEndIcon ? "40px" : "12px",
       fontSize: 14,
       width: "100%",
       "&:focus": {
-        boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
-        borderColor: theme.palette.primary.main,
+        boxShadow: `${alpha(
+          error ? theme.palette.error.main : theme.palette.primary.main,
+          0.25
+        )} 0 0 0 0.2rem`,
+        borderColor: error
+          ? theme.palette.error.main
+          : theme.palette.primary.main,
       },
     },
   })
@@ -103,6 +110,7 @@ export default function Input({
           onChange={onChange}
           hasStartIcon={!!icon}
           hasEndIcon={!!endIcon}
+          error={error}
           {...rest}
         />
       </InputWrapper>

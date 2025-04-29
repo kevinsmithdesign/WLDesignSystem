@@ -109,7 +109,14 @@ const TextFieldPage = () => {
                 />
               </Grid>
             </Grid>
-            <Grid size="grow"></Grid>
+            <Grid size="grow">
+              <Input
+                label="Email"
+                placeholder="Enter your email"
+                error
+                helperText="This field is required"
+              />
+            </Grid>
             <Grid
               size="grow"
               sx={{ display: "flex", alignItems: "flex-end" }}
