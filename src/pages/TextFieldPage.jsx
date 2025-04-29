@@ -4,6 +4,8 @@ import { useTheme } from "@mui/material/styles";
 import CodeSnippet from "../components/CodeSnippet";
 import Grid from "@mui/material/Grid2";
 import Input from "../components/Input";
+import SearchIcon from "../icons/SearchIcon";
+import SendIcon from "../icons/SendIcon";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -72,7 +74,12 @@ const TextFieldPage = () => {
             mb: 4,
           }}
         >
-          <Grid container spacing={3} direction={{ xs: "column", md: "row" }}>
+          <Grid
+            container
+            spacing={3}
+            direction={{ xs: "column", md: "row" }}
+            sx={{ mb: 3 }}
+          >
             <Grid size="grow">
               <Input label="With Label" placeholder="Enter text" fullWidth />
             </Grid>
@@ -80,13 +87,33 @@ const TextFieldPage = () => {
               <Input
                 label="With Icon"
                 placeholder="Search..."
-                icon="search"
+                icon={<SearchIcon width="24px" height="24px" />}
                 fullWidth
               />
             </Grid>
             <Grid size="grow" sx={{ display: "flex", alignItems: "flex-end" }}>
               <Input placeholder="No label" fullWidth />
             </Grid>
+          </Grid>
+          <Grid container spacing={3} direction={{ xs: "column", md: "row" }}>
+            <Grid size="grow">
+              <Grid
+                size="grow"
+                sx={{ display: "flex", alignItems: "flex-end" }}
+              >
+                <Input
+                  label="Lable"
+                  placeholder="Send Message..."
+                  fullWidth
+                  endIcon={<SendIcon width="24px" height="24px" />}
+                />
+              </Grid>
+            </Grid>
+            <Grid size="grow"></Grid>
+            <Grid
+              size="grow"
+              sx={{ display: "flex", alignItems: "flex-end" }}
+            ></Grid>
           </Grid>
         </Box>
       </CustomTabPanel>

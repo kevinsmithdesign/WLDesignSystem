@@ -2,135 +2,117 @@ import * as React from "react";
 import { styled, alpha, useTheme } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
-import InputAdornment from "@mui/material/InputAdornment";
-import Icon from "@mui/material/Icon";
 import Typography from "@mui/material/Typography";
 
-const BootstrapInput = styled(InputBase)(({ theme }) => ({
-  "label + &": {
-    marginTop: theme.spacing(2.5),
-  },
-  "& .MuiInputBase-input": {
-    borderRadius: 4,
-    position: "relative",
-    backgroundColor: "#F3F6F9",
-    border: "1px solid",
-    borderColor: "#E0E3E7",
-    fontSize: 14,
-    padding: "10px 12px",
-    transition: theme.transitions.create([
-      "border-color",
-      "background-color",
-      "box-shadow",
-    ]),
-    fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-    ].join(","),
-    "&::placeholder": {
-      color: "#888",
-      opacity: 1,
+// Wrapper for the entire component
+const InputContainer = styled(Box)(({ theme }) => ({
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  gap: "4px",
+}));
+
+// Label component
+const Label = styled(Typography)(({ theme }) => ({
+  fontSize: "14px",
+  fontWeight: 800,
+  color: "#222",
+}));
+
+// Input wrapper with icon
+const InputWrapper = styled(Box)(({ theme }) => ({
+  position: "relative",
+  width: "100%",
+  display: "flex",
+  alignItems: "center",
+}));
+
+// Start icon container
+const StartIconContainer = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  left: "12px",
+  top: "55%",
+  transform: "translateY(-50%)",
+  zIndex: 1,
+}));
+
+// End icon container
+const EndIconContainer = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  right: "12px",
+  top: "55%",
+  transform: "translateY(-50%)",
+  zIndex: 1,
+}));
+
+// The actual input component
+const StyledInput = styled(InputBase)(
+  ({ theme, hasStartIcon, hasEndIcon }) => ({
+    width: "100%",
+    "& .MuiInputBase-input": {
+      borderRadius: 4,
+      border: "1px solid #E0E3E7",
+      backgroundColor: "#F3F6F9",
+      padding: "10px 12px",
+      paddingLeft: hasStartIcon ? "40px" : "12px",
+      paddingRight: hasEndIcon ? "40px" : "12px",
+      fontSize: 14,
+      width: "100%",
+      "&:focus": {
+        boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
+        borderColor: theme.palette.primary.main,
+      },
     },
-    "&:focus": {
-      boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
-      borderColor: theme.palette.primary.main,
-    },
-  },
+  })
+);
+
+// Helper text component
+const HelperText = styled(Typography)(({ theme }) => ({
+  fontSize: "12px",
+  marginTop: "4px",
 }));
 
 export default function Input({
-  id = "bootstrap-input",
   label,
   placeholder = "placeholder text",
   icon,
+  endIcon, // Added endIcon prop
   error = false,
-  success = false,
-  warning = false,
   helperText,
-  disabled = false,
   fullWidth = false,
-  maxLength,
-  showCount = false,
   value,
   onChange,
   ...rest
 }) {
-  const theme = useTheme();
-  const validationColor = error
-    ? theme.palette.error.main
-    : success
-    ? theme.palette.success.main
-    : warning
-    ? theme.palette.warning.main
-    : "#222";
-
   return (
-    <Box
-      component="form"
-      noValidate
-      sx={{ width: fullWidth ? "100%" : "auto" }}
-    >
-      <FormControl
-        variant="standard"
-        fullWidth={fullWidth}
-        disabled={disabled}
-        error={error}
-      >
-        {label && (
-          <InputLabel
-            shrink
-            htmlFor={id}
-            sx={{ fontWeight: 800, color: validationColor }}
-          >
-            {label}
-          </InputLabel>
-        )}
+    <InputContainer sx={{ width: fullWidth ? "100%" : "auto" }}>
+      {/* Label outside the FormControl */}
+      {label && <Label>{label}</Label>}
 
-        <BootstrapInput
-          id={id}
+      <InputWrapper>
+        {/* Start icon if provided */}
+        {icon && <StartIconContainer>{icon}</StartIconContainer>}
+
+        {/* End icon if provided */}
+        {endIcon && <EndIconContainer>{endIcon}</EndIconContainer>}
+
+        {/* The actual input */}
+        <StyledInput
+          placeholder={placeholder}
           value={value}
           onChange={onChange}
-          placeholder={placeholder}
-          inputProps={{ maxLength }}
-          startAdornment={
-            icon ? (
-              <InputAdornment position="start">
-                <Icon>{icon}</Icon>
-              </InputAdornment>
-            ) : null
-          }
-          sx={{
-            "& .MuiInputBase-input": {
-              borderColor: validationColor,
-            },
-          }}
+          hasStartIcon={!!icon}
+          hasEndIcon={!!endIcon}
           {...rest}
         />
+      </InputWrapper>
 
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            mt: 0.5,
-          }}
-        >
-          <Typography variant="caption" sx={{ color: validationColor }}>
-            {helperText}
-          </Typography>
-          {showCount && maxLength && (
-            <Typography variant="caption" sx={{ color: "text.secondary" }}>
-              {`${value?.length || 0}/${maxLength}`}
-            </Typography>
-          )}
-        </Box>
-      </FormControl>
-    </Box>
+      {/* Helper text */}
+      {helperText && (
+        <HelperText color={error ? "error" : "textSecondary"}>
+          {helperText}
+        </HelperText>
+      )}
+    </InputContainer>
   );
 }
