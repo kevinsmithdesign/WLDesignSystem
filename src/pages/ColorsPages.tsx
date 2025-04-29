@@ -237,7 +237,7 @@ const ColorPage = () => {
       <Grid container spacing={2} mb={3}>
         {primaryTextColors.map(
           ({ title, backgroundColor, hex, copyValue }, index) => (
-            <Grid size={{ xs: 12, md: 3 }} key={index}>
+            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={index}>
               <React.Fragment>
                 <ColorCard
                   title={title}

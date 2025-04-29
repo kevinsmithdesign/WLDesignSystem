@@ -62,7 +62,7 @@ const DesignSystemOverviewPage = () => {
 
   return (
     <Box sx={{ maxWidth: "1120px" }}>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} display="flex">
         <Grid
           size={{ xs: 12, sm: 6 }}
           sx={{
