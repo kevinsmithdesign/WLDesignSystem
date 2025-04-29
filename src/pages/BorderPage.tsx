@@ -75,7 +75,7 @@ const BorderPage = () => {
         <Grid container spacing={2} pb={6}>
           {borderRadius.map(({ size, pm }) => (
             <Grid
-              size={{ xs: 12, sm: 6, md: 3 }}
+              size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
               key={size}
               sx={{
                 display: "flex",

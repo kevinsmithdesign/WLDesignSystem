@@ -263,7 +263,7 @@ const LeftNav = () => {
             background: "#fff",
             borderRight: "1px solid #eee",
             overflowY: "auto",
-            display: { xs: "none", md: "block" },
+            display: { xs: "none", md: "none", lg: "block" },
             flexShrink: 0,
           }}
         >
