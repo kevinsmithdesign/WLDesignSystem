@@ -39,9 +39,9 @@ function a11yProps(index) {
 const ButtonPage = () => {
   const buttonTypes = [
     {
+      showComponent: <Button variant="contained">Primary</Button>,
       title: "Primary Button (Contained)",
       subTitle: "When to use",
-
       bullets: [
         'For the most important action on a page, like "Submit," "Save," or "Send."',
         "Use when you want to draw the user's attention to the main call to action.",
@@ -49,6 +49,7 @@ const ButtonPage = () => {
       ],
     },
     {
+      showComponent: <Button variant="outlined">Secondary</Button>,
       title: "Secondary Button (Outlined)",
       subTitle: "When to use",
 
@@ -59,9 +60,27 @@ const ButtonPage = () => {
       ],
     },
     {
-      title: "Text Button",
+      showComponent: (
+        <Button variant="contained" disabled>
+          Disabled
+        </Button>
+      ),
+      title: "Disabled Button",
       subTitle: "When to use",
-
+      bullets: [
+        "Use in situations where a user needs to complete an action (e.g., fill out a form) before the button becomes clickable.",
+        "Disabled buttons should communicate that an action is unavailable until a condition is met.",
+        'Dynamic Behavior: Once the user completes the task, the button becomes enabled. When performing an action like an API call, the button displays the text "Loading..." and is disabled again to prevent multiple submissions.',
+      ],
+    },
+    {
+      showComponent: (
+        <Button variant="contained" color="error">
+          Delete
+        </Button>
+      ),
+      title: "Delete Button",
+      subTitle: "When to use",
       bullets: [
         "For less prominent actions that don't require emphasis.",
         "Use for actions that need to be available but shouldn't compete with primary actions.",
@@ -69,13 +88,27 @@ const ButtonPage = () => {
       ],
     },
     {
+      showComponent: (
+        <Button variant="contained" color="success">
+          Success
+        </Button>
+      ),
+      title: "Success Button",
+      subTitle: "When to use",
+      bullets: [
+        "Use to indicate a successful or positive action, like “Confirm,” “Done,” or “Success.”",
+        "Ideal for reassuring the user that their task or input has been accepted or completed.",
+        "Helps reinforce user confidence after actions like saving, confirming, or submitting data.",
+      ],
+    },
+    {
+      showComponent: <Button variant="text">Text</Button>,
       title: "Text Button",
       subTitle: "When to use",
-
       bullets: [
-        "For less prominent actions that don't require emphasis.",
-        "Use for actions that need to be available but shouldn't compete with primary actions.",
-        "Often used in dense UIs, lists, or card actions where space is limited.",
+        "Use for the least prominent actions, such as “Skip,” “Learn more,” or “Dismiss.”",
+        "Ideal for space-saving layouts where buttons need to feel lightweight and non-intrusive.",
+        "Best used when the action is optional or secondary to the primary task on the screen.",
       ],
     },
   ];
@@ -122,7 +155,10 @@ const ButtonPage = () => {
             mb: 4,
           }}
         >
-          <Stack flexDirection="row" gap={3}>
+          <Stack
+            flexDirection={{ xs: "column", lg: "row" }}
+            gap={{ xs: 1, lg: 3 }}
+          >
             <Button variant="contained">Primary</Button>
             <Button variant="outlined">Secondary</Button>
             <Button variant="contained" disabled>
@@ -131,12 +167,17 @@ const ButtonPage = () => {
             <Button variant="contained" color="error">
               Error
             </Button>
+            <Button variant="contained" color="success">
+              Success
+            </Button>
+            <Button variant="text">Text</Button>
           </Stack>
         </Box>
         <>
           {buttonTypes.map((buttonType, index) => (
             <UsageCard
               key={index}
+              showComponent={buttonType.showComponent}
               title={buttonType.title}
               subTitle={buttonType.subTitle}
               bullets={buttonType.bullets}

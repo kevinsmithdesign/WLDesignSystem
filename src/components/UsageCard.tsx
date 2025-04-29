@@ -9,26 +9,40 @@ import {
   ListItemText,
 } from "@mui/material";
 
-const UsageCard = ({ index, title, subTitle, bullets }) => {
+const UsageCard = ({ index, title, subTitle, bullets, showComponent }) => {
   return (
     <Card sx={{ p: 4, boxShadow: "none", borderRadius: 3, mb: 3 }}>
-      <Stack flexDirection="row">
+      <Stack flexDirection={{ xs: "column", lg: "row" }}>
         <Stack>
           <Box
             sx={{
               height: "260px",
-              width: "260px",
+              // width: "260px",
+
+              width: { xs: "100%", lg: "260px" },
               background: "#f6f6f6",
               borderRadius: 3,
               mr: 3,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
-          ></Box>
+          >
+            {showComponent}
+          </Box>
         </Stack>
-        <Stack sx={{ pl: 1, pt: 3, width: "100%" }}>
-          <Typography variant="h4" mb={2}>
+        <Stack
+          sx={{
+            pl: 1,
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Typography variant="h4" mb={2} mt={{ xs: 2, lg: 0 }}>
             {title}
           </Typography>
-          <Typography variant="h6" mb={2}>
+          <Typography variant="h6" mb={1}>
             {subTitle}
           </Typography>
           <List sx={{ pl: 0, mt: 0 }}>
