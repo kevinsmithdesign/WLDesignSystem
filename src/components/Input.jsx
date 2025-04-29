@@ -47,36 +47,54 @@ const EndIconContainer = styled(Box)(({ theme }) => ({
 
 // The actual input component
 const StyledInput = styled(InputBase)(
-  ({ theme, hasStartIcon, hasEndIcon, error }) => ({
-    width: "100%",
-    "& .MuiInputBase-input": {
-      borderRadius: 4,
-      border: `1px solid ${error ? theme.palette.error.main : "#E0E3E7"}`,
-      backgroundColor: error
-        ? alpha(theme.palette.error.main, 0.08) // soft translucent red
-        : "#F3F6F9",
-      padding: "10px 12px",
-      paddingLeft: hasStartIcon ? "40px" : "12px",
-      paddingRight: hasEndIcon ? "40px" : "12px",
-      fontSize: 14,
+  ({ theme, hasStartIcon, hasEndIcon, error, success }) => {
+    const isError = error;
+    const isSuccess = success && !error;
+
+    return {
       width: "100%",
-      "&:focus": {
-        boxShadow: `${alpha(
-          error ? theme.palette.error.main : theme.palette.primary.main,
-          0.25
-        )} 0 0 0 0.2rem`,
-        borderColor: error
-          ? theme.palette.error.main
-          : theme.palette.primary.main,
+      "& .MuiInputBase-input": {
+        borderRadius: 4,
+        border: `1px solid ${
+          isError
+            ? theme.palette.error.main
+            : isSuccess
+            ? theme.palette.success.main
+            : "#E0E3E7"
+        }`,
+        backgroundColor: isError
+          ? alpha(theme.palette.error.main, 0.08)
+          : isSuccess
+          ? alpha(theme.palette.success.main, 0.08)
+          : "#F3F6F9",
+        padding: "10px 12px",
+        paddingLeft: hasStartIcon ? "40px" : "12px",
+        paddingRight: hasEndIcon ? "40px" : "12px",
+        fontSize: 14,
+        width: "100%",
+        "&:focus": {
+          boxShadow: `${alpha(
+            isError
+              ? theme.palette.error.main
+              : isSuccess
+              ? theme.palette.success.main
+              : theme.palette.primary.main,
+            0.25
+          )} 0 0 0 0.2rem`,
+          borderColor: isError
+            ? theme.palette.error.main
+            : isSuccess
+            ? theme.palette.success.main
+            : theme.palette.primary.main,
+        },
       },
-    },
-  })
+    };
+  }
 );
 
 // Helper text component
 const HelperText = styled(Typography)(({ theme }) => ({
   fontSize: "12px",
-  marginTop: "4px",
 }));
 
 export default function Input({
@@ -85,6 +103,7 @@ export default function Input({
   icon,
   endIcon, // Added endIcon prop
   error = false,
+  success = false,
   helperText,
   fullWidth = false,
   value,
@@ -111,13 +130,16 @@ export default function Input({
           hasStartIcon={!!icon}
           hasEndIcon={!!endIcon}
           error={error}
+          success={success}
           {...rest}
         />
       </InputWrapper>
 
       {/* Helper text */}
       {helperText && (
-        <HelperText color={error ? "error" : "textSecondary"}>
+        <HelperText
+          color={error ? "error" : success ? "success.main" : "textSecondary"}
+        >
           {helperText}
         </HelperText>
       )}

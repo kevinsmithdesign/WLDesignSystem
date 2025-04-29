@@ -117,10 +117,14 @@ const TextFieldPage = () => {
                 helperText="This field is required"
               />
             </Grid>
-            <Grid
-              size="grow"
-              sx={{ display: "flex", alignItems: "flex-end" }}
-            ></Grid>
+            <Grid size="grow">
+              <Input
+                label="Username"
+                placeholder="Enter a username"
+                success
+                helperText="Strong password"
+              />
+            </Grid>
           </Grid>
         </Box>
       </CustomTabPanel>
