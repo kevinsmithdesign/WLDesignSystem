@@ -1,8 +1,9 @@
 import React from "react";
-import { Stack, Typography, Tabs, Tab, Box } from "@mui/material";
+import { Stack, Typography, Tabs, Tab, Box, TextField } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import CodeSnippet from "../components/CodeSnippet";
 import Grid from "@mui/material/Grid2";
+import Input from "../components/Input";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -62,7 +63,32 @@ const TextFieldPage = () => {
       </Tabs>
 
       <CustomTabPanel value={value} index={0}>
-        Design
+        <Box
+          sx={{
+            background: "#fff",
+            p: 6,
+            borderRadius: 3,
+            position: "relative",
+            mb: 4,
+          }}
+        >
+          <Grid container spacing={3} direction={{ xs: "column", md: "row" }}>
+            <Grid size="grow">
+              <Input label="With Label" placeholder="Enter text" fullWidth />
+            </Grid>
+            <Grid size="grow">
+              <Input
+                label="With Icon"
+                placeholder="Search..."
+                icon="search"
+                fullWidth
+              />
+            </Grid>
+            <Grid size="grow" sx={{ display: "flex", alignItems: "flex-end" }}>
+              <Input placeholder="No label" fullWidth />
+            </Grid>
+          </Grid>
+        </Box>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         Code
