@@ -77,6 +77,23 @@ const theme = createTheme({
         },
       },
     },
+    MuiAlert: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          borderRadius: "8px",
+          padding: "16px",
+          // border: `1px solid ${theme.palette.primary.main}`,
+        }),
+      },
+    },
+    MuiAlertTitle: {
+      styleOverrides: {
+        root: {
+          fontWeight: "bold",
+          marginBottom: "4px",
+        },
+      },
+    },
   },
 });
 

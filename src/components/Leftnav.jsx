@@ -39,7 +39,7 @@ const LeftNav = () => {
     // { to: "/chip", title: "Chip" },
     { to: "/text-field", title: "TextField" },
     // { to: "/controls", title: "Controls" },
-    // { to: "/alert", title: "Alert" },
+    { to: "/alert", title: "Alert" },
   ];
 
   // Function to check if link is active
@@ -79,15 +79,17 @@ const LeftNav = () => {
             width: "260px",
             height: "100%",
             background: "#fff",
-            borderRight: "1px solid #eee",
+            // borderRight: "1px solid #eee",
             overflowY: "auto",
             display: { xs: "none", md: "none", lg: "block" },
             flexShrink: 0,
           }}
         >
-          <Stack mt={8}>
+          <Stack mt={8} mb={6}>
             <Stack sx={{ padding: "0 0 8px 24px" }}>
-              <Typography fontWeight="bold">Getting Started</Typography>
+              <Typography variant="h5" fontWeight="bold">
+                Getting Started
+              </Typography>
             </Stack>
 
             {links.map(({ to, title }, index) => {
@@ -97,10 +99,14 @@ const LeftNav = () => {
                   key={index}
                   style={{
                     textDecoration: "none",
+
                     color: active ? "#fff" : "#222",
                     background: active ? theme.palette.primary.main : "",
-                    borderBottom: "1px solid #eee",
-                    padding: "16px 24px",
+                    // borderBottom: "1px solid #eee",
+                    padding: "10px 16px",
+                    borderRadius: "6px",
+                    marginLeft: "10px",
+                    width: "190px",
                     display: "block",
                     backgroundColor: active ? "primary.main" : "transparent",
                   }}
@@ -113,9 +119,11 @@ const LeftNav = () => {
               );
             })}
           </Stack>
-          <Stack mb={2}>
+          <Stack mb={6}>
             <Stack sx={{ padding: "16px 0 8px 24px" }}>
-              <Typography fontWeight="bold">Foundation</Typography>
+              <Typography variant="h5" fontWeight="bold">
+                Foundation
+              </Typography>
             </Stack>
             {moleculesLink.map(({ to, title }, index) => {
               const active = isActive(to);
@@ -126,8 +134,11 @@ const LeftNav = () => {
                     textDecoration: "none",
                     color: active ? "#fff" : "#222",
                     background: active ? theme.palette.primary.main : "",
-                    borderBottom: "1px solid #eee",
-                    padding: "16px 24px",
+                    // borderBottom: "1px solid #eee",
+                    padding: "10px 16px",
+                    borderRadius: "6px",
+                    marginLeft: "10px",
+                    width: "190px",
                     display: "block",
                     backgroundColor: active ? "primary.main" : "transparent",
                   }}
@@ -140,9 +151,11 @@ const LeftNav = () => {
               );
             })}
           </Stack>
-          <Stack mb={2}>
+          <Stack mb={6}>
             <Stack sx={{ padding: "16px 0 8px 24px" }}>
-              <Typography fontWeight="bold">Components</Typography>
+              <Typography variant="h5" fontWeight="bold">
+                Components
+              </Typography>
             </Stack>
             {componentsLink.map(({ to, title }, index) => {
               const active = isActive(to);
@@ -153,8 +166,12 @@ const LeftNav = () => {
                     textDecoration: "none",
                     color: active ? "#fff" : "#222",
                     background: active ? theme.palette.primary.main : "",
-                    borderBottom: "1px solid #eee",
-                    padding: "16px 24px",
+                    // borderBottom: "1px solid #eee",
+                    padding: "10px 16px",
+
+                    borderRadius: "6px",
+                    marginLeft: "10px",
+                    width: "190px",
                     display: "block",
                     backgroundColor: active ? "primary.main" : "transparent",
                   }}

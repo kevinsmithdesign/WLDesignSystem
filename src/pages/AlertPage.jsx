@@ -1,8 +1,21 @@
 import React from "react";
-import { Stack, Typography, Tabs, Tab, Box } from "@mui/material";
+import {
+  Stack,
+  Typography,
+  Tabs,
+  Tab,
+  Box,
+  Alert,
+  AlertTitle,
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import CodeSnippet from "../components/CodeSnippet";
 import Grid from "@mui/material/Grid2";
+import CheckMarkIcon from "../icons/CheckMarkIcon";
+import WarningIcon from "../icons/WarningIcon";
+import SuccessIcon from "../icons/SuccessIcon";
+import InfoIcon from "../icons/InfoIcon";
+import ErrorIcon from "../icons/ErrorIcon";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -63,7 +76,70 @@ const AlertPage = () => {
       </Tabs>
 
       <CustomTabPanel value={value} index={0}>
-        Design
+        <Box
+          sx={{
+            background: "#fff",
+            p: 6,
+            borderRadius: 3,
+            position: "relative",
+            mb: 4,
+          }}
+        >
+          <Stack sx={{ width: "100%" }} spacing={2}>
+            <Alert
+              severity="success"
+              icon={
+                <SuccessIcon
+                  width="24px"
+                  height="24px"
+                  stroke={theme.palette.success.dark}
+                />
+              }
+            >
+              <AlertTitle>Success</AlertTitle>
+              This is a success Alert with an encouraging title.
+            </Alert>
+            <Alert
+              severity="info"
+              icon={
+                <InfoIcon
+                  width="24px"
+                  height="24px"
+                  stroke={theme.palette.info.dark}
+                />
+              }
+            >
+              <AlertTitle>Info</AlertTitle>
+              This is an info Alert with an informative title.
+            </Alert>
+            <Alert
+              severity="warning"
+              icon={
+                <WarningIcon
+                  width="24px"
+                  height="24px"
+                  stroke={theme.palette.warning.dark}
+                />
+              }
+            >
+              <AlertTitle>Warning</AlertTitle>
+              This is a warning Alert with a cautious title.
+            </Alert>
+            <Alert
+              severity="error"
+              icon={
+                <ErrorIcon
+                  width="24px"
+                  height="24px"
+                  stroke={theme.palette.error.dark}
+                />
+              }
+            >
+              <AlertTitle>Error</AlertTitle>
+              This is an error Alert with a scary title.
+            </Alert>
+          </Stack>
+        </Box>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         Code

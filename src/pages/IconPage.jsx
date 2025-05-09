@@ -32,7 +32,9 @@ import ProfileIcon from "../icons/ProfileIcon";
 import SearchIcon from "../icons/SearchIcon";
 import SettingsIcon from "../icons/SettingsIcon";
 import ShareIcon from "../icons/ShareIcon";
+import SuccessIcon from "../icons/SuccessIcon";
 import WarningIcon from "../icons/WarningIcon";
+import InfoIcon from "../icons/InfoIcon";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -72,11 +74,13 @@ const IconPage = () => {
     { title: "FilterIcon", component: <FilterIcon /> },
     { title: "HeartIcon", component: <HeartIcon /> },
     { title: "HomeIcon", component: <HomeIcon /> },
+    { title: "InfoIcon", component: <InfoIcon /> },
     { title: "NotificationIcon", component: <NotificationIcon /> },
     { title: "ProfileIcon", component: <ProfileIcon /> },
     { title: "SearchIcon", component: <SearchIcon /> },
     { title: "SettingsIcon", component: <SettingsIcon /> },
     { title: "ShareIcon", component: <ShareIcon /> },
+    { title: "SuccessIcon", component: <SuccessIcon /> },
     { title: "WarningIcon", component: <WarningIcon /> },
   ];
 
