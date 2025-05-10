@@ -53,12 +53,10 @@ const SpacingPage = () => {
         Spacing
       </Typography>
       <Typography variant="body2" mb={6}>
-        Spacing system ensures consistent layout and alignment by defining a set
-        of standard values for padding, margin, and gaps. It creates a unified
-        structure across the product, making designs visually appealing and easy
-        to navigate. By maintaining consistent spacing, the system enhances
-        readability, clarity, and overall design flow, ensuring a balanced and
-        organized layout.
+        Grounded in mathematical ratios, our spacing system creates breathing
+        room from individual components to full layouts. Each space serves a
+        specific purpose, from grouping related elements to defining clear
+        sections, making interfaces feel organized and intentional.
       </Typography>
       <Tabs
         value={value}

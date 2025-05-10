@@ -126,14 +126,11 @@ const ButtonPage = () => {
         Button
       </Typography>
       <Typography mb={6}>
-        Button system provides consistent styles and interactions for clickable
-        elements across the interface. It defines different button types
-        contained or outlined with clear visual states for hover, active,
-        disabled, and focus. The system ensures buttons are accessible, visually
-        distinct, and aligned with the brand's identity, offering flexibility in
-        size, and shape. By standardizing button components, the design system
-        enhances usability and provides a cohesive experience throughout the
-        product.
+        Designed for clear affordance, our button system guides actions from
+        primary calls-to-action to subtle text links. Each button variant serves
+        a specific purpose, from driving conversions to providing secondary
+        options, creating intuitive interaction patterns throughout the
+        experience.
       </Typography>
       <Tabs
         value={value}

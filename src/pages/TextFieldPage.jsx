@@ -118,14 +118,10 @@ const TextFieldPage = () => {
         TextField
       </Typography>
       <Typography mb={6}>
-        Input system defines the design and behavior of fields where users
-        provide information, such as text boxes. It ensures consistency in
-        appearance, spacing, and interaction states (focused, filled, disabled,
-        error) across all forms and input areas. The system prioritizes
-        usability by offering clear labels, helpful error messages, and
-        accessible touch targets. Standardizing text input components helps
-        improve the overall user experience, making data entry intuitive and
-        efficient.
+        Engineered for effortless input, our text field system handles
+        everything from simple searches to complex form data. Each field variant
+        serves a specific purpose, from collecting user information to providing
+        real-time validation, making data entry feel smooth and error-free.
       </Typography>
       <Tabs
         value={value}

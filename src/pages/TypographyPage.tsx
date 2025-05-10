@@ -169,13 +169,10 @@ const TypographyPage = () => {
         Typography
       </Typography>
       <Typography variant="body2" mb={6}>
-        Typography system establishes a clear hierarchy and readability
-        throughout the product by defining font styles, sizes, weights, and
-        spacing. It includes guidelines for headings, body text, captions, and
-        other text elements, ensuring consistency in both desktop and mobile
-        layouts. The system enhances the user experience by creating a visual
-        rhythm, improving legibility, and supporting the overall tone and
-        personality of the brand.
+        A systematic type scale establishes clear hierarchies and optimal
+        reading experiences across devices. Each style serves a specific
+        purpose, from heading emphasis to interface labeling, creating
+        consistent rhythm and readability throughout the system.
       </Typography>
       <Tabs
         value={value}
@@ -226,11 +223,11 @@ const TypographyPage = () => {
           <Grid container spacing={6}>
             <Grid size={{ xs: 12, md: 7 }}>
               <Typography variant="body2">
-                Roboto is a modern, versatile sans-serif typeface with clean
-                geometry and natural curves. Its friendly yet professional tone
-                suits digital and print, offering various weights and styles for
-                flexibility. Ideal for UI/UX design, it ensures readability at
-                small sizes and impact at larger scales.
+                Built on systematic type scales, our typography creates clear
+                hierarchies from single screens to complex applications. Each
+                type style serves a specific purpose, from communicating content
+                structure to enhancing readability, ensuring information is
+                accessible to all users.
               </Typography>
             </Grid>
             <Grid

@@ -45,11 +45,11 @@ const GridPage = () => {
         Grid
       </Typography>
       <Typography mb={6}>
-        Grid system helps organize content by dividing the layout into columns
-        and rows, making it easier to create consistent and responsive designs.
-        It ensures elements are properly aligned, with even spacing between
-        them, providing a clear structure that adapts to different screen sizes.
-        Grids help maintain balance and visual hierarchy across your design.
+        Built on flexible columns, our grid system structures content from
+        compact mobile layouts to expansive desktop views. Each grid
+        configuration serves a specific purpose, from organizing information
+        hierarchies to maintaining visual rhythm, creating responsive layouts
+        that adapt gracefully.
       </Typography>
       <Tabs
         value={value}

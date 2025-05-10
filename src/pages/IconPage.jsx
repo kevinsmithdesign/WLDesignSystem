@@ -98,14 +98,11 @@ const IconPage = () => {
         Icon
       </Typography>
       <Typography mb={6}>
-        Icons system establishes a visual language that enhances clarity and
-        functionality across the product. It defines the styles, sizes, and
-        spacing for icons, ensuring consistency and alignment with the overall
-        design language. The system includes guidelines for interactive icons,
-        status indicators, and decorative elements, ensuring they are scalable
-        and legible in both desktop and mobile contexts. By creating a cohesive
-        iconography, the system improves user understanding, reinforces the
-        brand’s identity, and enhances usability throughout the interface.
+        Designed with consistent line weights, our icon system communicates
+        actions and states across the interface. Each icon serves a specific
+        purpose, from navigation controls to system feedback, creating a clear
+        visual language that users understand at a glance.RetryClaude can make
+        mistakes. Please double-check responses.
       </Typography>
       <Tabs
         value={value}

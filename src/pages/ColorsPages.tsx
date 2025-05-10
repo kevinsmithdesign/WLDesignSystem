@@ -223,13 +223,10 @@ const ColorPage = () => {
         Colors
       </Typography>
       <Typography variant="body2" mb={4}>
-        Color system defines a palette that reflects the brand’s identity and
-        ensures a cohesive visual experience across the entire product. It
-        provides primary, secondary, and accent colors, along with variants for
-        different states (hover, active, disabled) and backgrounds. By using a
-        consistent color scheme, the system enhances accessibility, visual
-        clarity, and emotional impact, while maintaining balance and harmony
-        across all design elements.
+        Built on a foundation of design tokens, our color system scales from
+        single products to multi-brand platforms. Each color serves a specific
+        purpose, from semantic states to interactive feedback, creating
+        predictable user experiences.
       </Typography>
       <Typography variant="h6" mb={0.5}>
         Primary Text Colors

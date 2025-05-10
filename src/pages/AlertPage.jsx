@@ -55,15 +55,10 @@ const AlertPage = () => {
         Alert
       </Typography>
       <Typography mb={6}>
-        Alert system defines the design and behavior of feedback notifications
-        that inform users about important states and actions within the app. It
-        ensures a consistent appearance, hierarchy, and interaction across
-        different alert types—such as information, success, warning, and error.
-        The system prioritizes clarity by using distinct colors, icons, and
-        concise messaging to communicate the nature and urgency of the alert.
-        Standardizing the alert components helps improve the overall user
-        experience, providing timely, accessible, and actionable feedback in
-        various scenarios.
+        Crafted for clear communication, our alert system delivers messages from
+        subtle notifications to critical warnings. Each alert type serves a
+        specific purpose, from confirming successful actions to preventing
+        errors, ensuring users stay informed without feeling overwhelmed.RetryKS
       </Typography>
       <Tabs
         value={value}

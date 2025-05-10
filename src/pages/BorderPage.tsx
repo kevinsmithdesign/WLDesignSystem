@@ -54,12 +54,11 @@ const BorderPage = () => {
         Border Radius
       </Typography>
       <Typography variant="body2" mb={4}>
-        Border Radius system defines the curvature of UI elements, contributing
-        to the product's overall style and tone. It enhances the visual appeal
-        by softening edges and adding a polished look to components such as
-        buttons, cards, and inputs. Consistent use of border radius helps
-        achieve a cohesive and approachable design, providing a sense of
-        continuity and harmony across all interactions.
+        Applied with intentional restraint, our radius values create visual
+        softness from sharp edges to fully rounded elements. Each radius serves
+        a specific purpose, from distinguishing interactive elements to creating
+        visual groupings, balancing modern aesthetics with functional
+        clarity.RetryClaude can make mistakes. Please double-check responses.
       </Typography>
       <Tabs
         value={value}
