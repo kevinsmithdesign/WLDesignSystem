@@ -1,11 +1,11 @@
 import { createTheme } from "@mui/material";
 
 const jsonConfig = {
-  primaryColor: "#C91235",
-  secondaryColor: "#222",
+  primaryColor: "#2a4633",
+  secondaryColor: "#86a989",
   errorColor: "#9E0724",
-  warningColor: "#E6BD2F",
-  infoColor: "#1292C9",
+  warningColor: "#ffc46d",
+  infoColor: "#EC8701",
   successColor: "#00880E",
 };
 

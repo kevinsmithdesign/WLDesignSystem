@@ -1,22 +1,22 @@
 import React, { createContext, useState, useMemo, useContext } from "react";
 import { ThemeProvider as MUIThemeProvider } from "@mui/material/styles";
 import ThemeThree from "../themes/ThemeThree";
-import ThemeOne from "../themes/ThemeOne";
+import ThemeOne from "../themes/ThemeOne"; // Blue Print
 import ThemeTwo from "../themes/ThemeTwo";
 import ThemeFour from "../themes/ThemeFour";
 
 const ThemeContext = createContext();
 
 export const ThemeProviderDesignSystem = ({ children }) => {
-  const [themeName, setThemeName] = useState("Theme One");
+  const [themeName, setThemeName] = useState("Blue Print");
 
   const theme = useMemo(() => {
     switch (themeName) {
-      case "Theme One":
+      case "Blue Print":
         return ThemeOne;
-      case "Theme Two":
+      case "Greenhouse":
         return ThemeTwo;
-      case "Theme Three":
+      case "Spectrum":
         return ThemeThree;
       default:
         return ThemeFour;

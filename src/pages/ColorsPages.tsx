@@ -219,9 +219,11 @@ const ColorPage = () => {
 
   return (
     <Stack sx={{ maxWidth: "1120px", mb: 8 }}>
-      <Typography variant="h2" fontWeight="bold" mb={3}>
-        Colors
-      </Typography>
+      <Grid>
+        <Typography variant="h2" fontWeight="bold" mb={3}>
+          Colors
+        </Typography>
+      </Grid>
       <Typography variant="body2" mb={4}>
         Built on a foundation of design tokens, our color system scales from
         single products to multi-brand platforms. Each color serves a specific

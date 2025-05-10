@@ -7,11 +7,11 @@ const jsonConfig = {
   primaryColor: "#3B75FE",
   primaryDarkColor: "#253A7B",
   primaryLightColor: "#5E75BF",
-  secondaryColor: "#3690B0",
-  errorColor: "#C42014",
-  warningColor: "#C67F00",
+  secondaryColor: "#22b0fb",
+  errorColor: "#fc4627",
+  warningColor: "#fec132",
   infoColor: "#4230C6",
-  successColor: "#128129",
+  successColor: "#fc4627",
 };
 
 const theme = createTheme({

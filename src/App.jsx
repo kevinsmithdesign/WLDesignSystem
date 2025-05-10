@@ -22,7 +22,7 @@ import { ThemeProviderDesignSystem, useTheme } from "./themes/ThemeContext";
 import LeftNav from "./components/Leftnav";
 
 // Available themes for the selector
-const themeOptions = ["Theme One", "Theme Two", "Theme Three", "Theme Four"];
+const themeOptions = ["Blue Print", "Greenhouse", "Spectrum", "Eclipse"];
 
 // This is now a separate component used inside the BrowserRouter context
 const WhiteLabelContent = () => {
@@ -68,7 +68,7 @@ const WhiteLabelContent = () => {
                 color: theme.palette.primary.contrastText,
               }}
             >
-              {themeName}
+              THEME: {themeName}
             </Typography>
           </Stack>
           <Stack>

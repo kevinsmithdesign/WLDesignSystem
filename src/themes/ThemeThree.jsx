@@ -10,12 +10,12 @@ import {
 } from "@mui/material";
 
 const jsonConfig = {
-  primaryColor: "#0679CC",
-  secondaryColor: "#8CABE0",
-  errorColor: "#D9534F",
-  warningColor: "#F0AD4E",
-  infoColor: "#5BC0DE",
-  successColor: "#5CB85C",
+  primaryColor: "#3e5fd6",
+  secondaryColor: "#2a84fc",
+  errorColor: "#ff0201",
+  warningColor: "#fcbc05",
+  infoColor: "#2a84fc",
+  successColor: "#1aa35e",
 };
 
 const theme = createTheme({
