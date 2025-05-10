@@ -62,19 +62,42 @@ const LeftNav = () => {
         display: { xs: "none", md: "none", lg: "block" },
         flexShrink: 0,
         scrollbarWidth: "thin", // Firefox
-        scrollbarColor: "#ccc transparent",
+        scrollbarColor: "#eee transparent",
+
+        // Scrollbar styling
+
+        // Webkit browsers
         "&::-webkit-scrollbar": {
-          width: "4px",
-        },
-        "&::-webkit-scrollbar-track": {
+          width: "0",
           background: "transparent",
         },
-        "&::-webkit-scrollbar-thumb": {
-          backgroundColor: "#ccc",
-          borderRadius: "4px",
-        },
-        "&::-webkit-scrollbar-thumb:hover": {
-          backgroundColor: "#999",
+
+        // Show scrollbar on hover
+        "&:hover": {
+          scrollbarWidth: "thin", // Firefox
+          msOverflowStyle: "auto", // IE
+
+          "&::-webkit-scrollbar": {
+            width: "2px !important",
+          },
+          "&::-webkit-scrollbar-track": {
+            background: "transparent",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: "rgba(0, 0, 0, 0.3)",
+            borderRadius: "3px",
+          },
+          "&::-webkit-scrollbar-thumb:hover": {
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+          },
+          "&&::-webkit-scrollbar": {
+            // Double ampersand for higher specificity
+            width: "1px",
+          },
+          // Or be even more specific
+          "&.MuiBox-root::-webkit-scrollbar": {
+            width: "1px",
+          },
         },
       }}
     >

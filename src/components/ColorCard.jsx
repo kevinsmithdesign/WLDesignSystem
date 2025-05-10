@@ -38,7 +38,7 @@ const ColorCard = ({
     >
       <Box
         sx={{
-          height: "150px",
+          height: "220px",
           background: backgroundColor,
           borderRadius: "10px 10px 0px 0px",
           width: "100%",
@@ -61,7 +61,7 @@ const ColorCard = ({
           </IconButton>
         </Tooltip>
       </Box>
-      <Box sx={{ py: 2, px: 2.5 }}>
+      <Box sx={{ py: 3, px: 3.5 }}>
         <Typography variant="h6" fontWeight="bold" mb={0.5}>
           {title}
         </Typography>
