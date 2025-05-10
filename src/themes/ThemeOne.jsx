@@ -11,7 +11,7 @@ const jsonConfig = {
   errorColor: "#fc4627",
   warningColor: "#fec132",
   infoColor: "#4230C6",
-  successColor: "#fc4627",
+  successColor: "#39c874",
 };
 
 const theme = createTheme({

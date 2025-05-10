@@ -54,11 +54,28 @@ const LeftNav = () => {
   return (
     <Box
       sx={{
-        display: "flex",
-        width: "100%",
-        height: "100vh",
-        position: "relative",
-        paddingTop: "73px", // Account for header
+        width: "260px",
+        height: "100%",
+        background: "#fff",
+        overflowY: "auto",
+        overflowX: "hidden",
+        display: { xs: "none", md: "none", lg: "block" },
+        flexShrink: 0,
+        scrollbarWidth: "thin", // Firefox
+        scrollbarColor: "#ccc transparent",
+        "&::-webkit-scrollbar": {
+          width: "4px",
+        },
+        "&::-webkit-scrollbar-track": {
+          background: "transparent",
+        },
+        "&::-webkit-scrollbar-thumb": {
+          backgroundColor: "#ccc",
+          borderRadius: "4px",
+        },
+        "&::-webkit-scrollbar-thumb:hover": {
+          backgroundColor: "#999",
+        },
       }}
     >
       <Box
@@ -92,32 +109,35 @@ const LeftNav = () => {
               </Typography>
             </Stack>
 
-            {links.map(({ to, title }, index) => {
-              const active = isActive(to);
-              return (
-                <Link
-                  key={index}
-                  style={{
-                    textDecoration: "none",
+            <Stack px={1}>
+              {links.map(({ to, title }, index) => {
+                const active = isActive(to);
+                return (
+                  <Link
+                    key={index}
+                    style={{
+                      textDecoration: "none",
 
-                    color: active ? "#fff" : "#222",
-                    background: active ? theme.palette.primary.main : "",
-                    // borderBottom: "1px solid #eee",
-                    padding: "12px 16px",
-                    borderRadius: "8px",
-                    marginLeft: "10px",
-                    width: "206px",
-                    display: "block",
-                    backgroundColor: active ? "primary.main" : "transparent",
-                  }}
-                  to={to}
-                >
-                  <Typography sx={{ color: active ? "#fff" : "inherit" }}>
-                    {title}
-                  </Typography>
-                </Link>
-              );
-            })}
+                      color: active ? "#fff" : "#222",
+                      background: active ? theme.palette.primary.main : "",
+                      // borderBottom: "1px solid #eee",
+                      padding: "12px 16px",
+                      borderRadius: "8px",
+                      // marginLeft: "10px",
+                      // width: "206px",
+                      // width: "calc(100% - 32px)",
+                      display: "block",
+                      backgroundColor: active ? "primary.main" : "transparent",
+                    }}
+                    to={to}
+                  >
+                    <Typography sx={{ color: active ? "#fff" : "inherit" }}>
+                      {title}
+                    </Typography>
+                  </Link>
+                );
+              })}
+            </Stack>
           </Stack>
           <Stack mb={6}>
             <Stack sx={{ padding: "16px 0 8px 24px" }}>
@@ -125,31 +145,35 @@ const LeftNav = () => {
                 Foundation
               </Typography>
             </Stack>
-            {moleculesLink.map(({ to, title }, index) => {
-              const active = isActive(to);
-              return (
-                <Link
-                  key={index}
-                  style={{
-                    textDecoration: "none",
-                    color: active ? "#fff" : "#222",
-                    background: active ? theme.palette.primary.main : "",
-                    // borderBottom: "1px solid #eee",
-                    padding: "12px 16px",
-                    borderRadius: "8px",
-                    marginLeft: "10px",
-                    width: "206px",
-                    display: "block",
-                    backgroundColor: active ? "primary.main" : "transparent",
-                  }}
-                  to={to}
-                >
-                  <Typography sx={{ color: active ? "#fff" : "inherit" }}>
-                    {title}
-                  </Typography>
-                </Link>
-              );
-            })}
+            <Stack px={1}>
+              {moleculesLink.map(({ to, title }, index) => {
+                const active = isActive(to);
+                return (
+                  <Link
+                    key={index}
+                    style={{
+                      textDecoration: "none",
+                      color: active ? "#fff" : "#222",
+                      background: active ? theme.palette.primary.main : "",
+                      // borderBottom: "1px solid #eee",
+                      padding: "12px 16px",
+                      borderRadius: "8px",
+                      // marginLeft: "10px",
+                      // width: "206px",
+                      // width: "calc(100% - 32px)",
+
+                      display: "block",
+                      backgroundColor: active ? "primary.main" : "transparent",
+                    }}
+                    to={to}
+                  >
+                    <Typography sx={{ color: active ? "#fff" : "inherit" }}>
+                      {title}
+                    </Typography>
+                  </Link>
+                );
+              })}
+            </Stack>
           </Stack>
           <Stack mb={6}>
             <Stack sx={{ padding: "16px 0 8px 24px" }}>
@@ -157,31 +181,35 @@ const LeftNav = () => {
                 Components
               </Typography>
             </Stack>
-            {componentsLink.map(({ to, title }, index) => {
-              const active = isActive(to);
-              return (
-                <Link
-                  key={index}
-                  style={{
-                    textDecoration: "none",
-                    color: active ? "#fff" : "#222",
-                    background: active ? theme.palette.primary.main : "",
-                    // borderBottom: "1px solid #eee",
-                    padding: "12px 16px",
-                    borderRadius: "8px",
-                    marginLeft: "10px",
-                    width: "206px",
-                    display: "block",
-                    backgroundColor: active ? "primary.main" : "transparent",
-                  }}
-                  to={to}
-                >
-                  <Typography sx={{ color: active ? "#fff" : "inherit" }}>
-                    {title}
-                  </Typography>
-                </Link>
-              );
-            })}
+            <Stack px={1}>
+              {componentsLink.map(({ to, title }, index) => {
+                const active = isActive(to);
+                return (
+                  <Link
+                    key={index}
+                    style={{
+                      textDecoration: "none",
+                      color: active ? "#fff" : "#222",
+                      background: active ? theme.palette.primary.main : "",
+                      // borderBottom: "1px solid #eee",
+                      padding: "12px 16px",
+                      borderRadius: "8px",
+                      // marginLeft: "10px",
+                      // width: "206px",
+                      // width: "calc(100% - 32px)",
+
+                      display: "block",
+                      backgroundColor: active ? "primary.main" : "transparent",
+                    }}
+                    to={to}
+                  >
+                    <Typography sx={{ color: active ? "#fff" : "inherit" }}>
+                      {title}
+                    </Typography>
+                  </Link>
+                );
+              })}
+            </Stack>
           </Stack>
 
           {/* Add dummy content to ensure scrollability */}
