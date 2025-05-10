@@ -101,26 +101,6 @@ const ColorPage = () => {
 
   const sections = [
     {
-      title: "Primary Text Colors",
-      colors: [
-        {
-          title: "Primary Text",
-          backgroundColor: theme.palette.text.primary,
-          token: "theme.palette.text.primary",
-        },
-        {
-          title: "Secondary Text",
-          backgroundColor: theme.palette.text.secondary,
-          token: "theme.palette.text.secondary",
-        },
-        {
-          title: "Disabled Text",
-          backgroundColor: theme.palette.text.disabled,
-          token: "theme.palette.text.disabled",
-        },
-      ],
-    },
-    {
       title: "Primary Colors",
       colors: [
         {
@@ -240,6 +220,26 @@ const ColorPage = () => {
         },
       ],
     },
+    {
+      title: "Primary Text Colors",
+      colors: [
+        {
+          title: "Primary Text",
+          backgroundColor: theme.palette.text.primary,
+          token: "theme.palette.text.primary",
+        },
+        {
+          title: "Secondary Text",
+          backgroundColor: theme.palette.text.secondary,
+          token: "theme.palette.text.secondary",
+        },
+        {
+          title: "Disabled Text",
+          backgroundColor: theme.palette.text.disabled,
+          token: "theme.palette.text.disabled",
+        },
+      ],
+    },
   ];
 
   return (
@@ -262,11 +262,8 @@ const ColorPage = () => {
               onClick={handleClick}
               endIcon={<KeyboardArrowDownIcon />}
               sx={{
-                // background: theme.palette.primary.contrastText,
-                // color: theme.palette.primary.main,
                 fontWeight: "bold",
                 "&:hover": {
-                  // background: theme.palette.primary.contrastText,
                   boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
                 },
               }}
