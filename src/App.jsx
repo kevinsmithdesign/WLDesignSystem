@@ -29,9 +29,10 @@ const themeOptions = ["Blue Print", "Greenhouse", "Spectrum", "Eclipse"];
 // This is now a separate component used inside the BrowserRouter context
 const WhiteLabelContent = () => {
   const { themeName, setThemeName, theme } = useTheme();
-  const navigate = useNavigate();
-  const [menuOpen, setMenuOpen] = useState(false);
+  // const navigate = useNavigate();
+  // const [menuOpen, setMenuOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   const open = Boolean(anchorEl);
 
@@ -65,7 +66,6 @@ const WhiteLabelContent = () => {
           <Stack sx={{ flex: 1 }}>
             <Typography
               sx={{
-                // fontSize: "24px",
                 fontSize: { xs: "18px", sm: "24px" },
                 fontWeight: "bold",
                 color: theme.palette.primary.contrastText,
@@ -125,7 +125,7 @@ const WhiteLabelContent = () => {
               ))}
             </Menu>
             <Stack sx={{ display: { xs: "flex", md: "none" } }}>
-              <HamburgerMenu />
+              <HamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
             </Stack>
           </Stack>
           <Stack
@@ -136,8 +136,7 @@ const WhiteLabelContent = () => {
           ></Stack>
         </Stack>
       </Stack>
-      <PageWrapper />
-      {/* <LeftNav /> */}
+      <PageWrapper isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   );
 };

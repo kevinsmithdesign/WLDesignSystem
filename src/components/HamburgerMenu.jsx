@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Box } from "@mui/material";
 
-const HamburgerMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const HamburgerMenu = ({ isOpen, setIsOpen }) => {
+  //   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Box

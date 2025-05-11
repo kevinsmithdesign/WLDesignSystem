@@ -84,29 +84,6 @@ const LeftNavTwo = () => {
         },
       }}
     >
-      {/* <Box
-        sx={{
-          display: "flex",
-          width: "100%",
-          height: "calc(100vh - 73px)",
-          position: "fixed",
-          top: { xs: "60px", sm: "73px" },
-          left: 0,
-          right: 0,
-          bottom: 0,
-        }}
-      > */}
-      {/* Left Nav */}
-      {/* <Box
-        sx={{
-          width: "260px",
-          height: "100%",
-          background: "#fff",
-          overflowY: "auto",
-          display: { xs: "none", md: "none", lg: "block" },
-          flexShrink: 0,
-        }}
-      > */}
       <Stack mt={8} mb={6}>
         <Stack sx={{ padding: "0 0 8px 24px" }}>
           <Typography variant="h5" fontWeight="bold">
@@ -200,11 +177,8 @@ const LeftNavTwo = () => {
           })}
         </Stack>
       </Stack>
-
       {/* Add dummy content to ensure scrollability */}
       <Box sx={{ height: "50px" }}></Box>
-      {/* </Box> */}
-      {/* </Box> */}
     </Box>
   );
 };
