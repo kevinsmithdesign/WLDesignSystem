@@ -59,7 +59,7 @@ const LeftNav = () => {
         background: "#fff",
         overflowY: "auto",
         overflowX: "hidden",
-        display: { xs: "none", md: "none", lg: "block" },
+        // display: { xs: "none", md: "none", lg: "block" },
         flexShrink: 0,
         scrollbarWidth: "thin", // Firefox
         scrollbarColor: "#eee transparent",
@@ -106,8 +106,10 @@ const LeftNav = () => {
           display: "flex",
           width: "100%",
           height: "calc(100vh - 73px)",
+
           position: "fixed",
-          top: "73px",
+          // top: "73px",
+          top: { xs: "60px", sm: "73px" },
           left: 0,
           right: 0,
           bottom: 0,
@@ -245,7 +247,9 @@ const LeftNav = () => {
             flex: 1,
             height: "100%",
             background: "#f6f6fa",
-            padding: "32px 48px",
+            // padding: "32px 48px",
+
+            padding: { xs: "32px 16px", sm: "32px 48px" },
             overflowY: "auto",
           }}
         >

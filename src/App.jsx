@@ -63,7 +63,8 @@ const WhiteLabelContent = () => {
           <Stack sx={{ flex: 1 }}>
             <Typography
               sx={{
-                fontSize: "24px",
+                // fontSize: "24px",
+                fontSize: { xs: "18px", sm: "24px" },
                 fontWeight: "bold",
                 color: theme.palette.primary.contrastText,
               }}
@@ -85,6 +86,7 @@ const WhiteLabelContent = () => {
                 background: theme.palette.primary.contrastText,
                 color: theme.palette.primary.main,
                 fontWeight: "bold",
+                display: { xs: "none", sm: "flex" },
                 "&:hover": {
                   background: theme.palette.primary.contrastText,
                   boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",

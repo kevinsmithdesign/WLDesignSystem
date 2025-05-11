@@ -64,7 +64,7 @@ const DesignSystemOverviewPage = () => {
     <Box sx={{ maxWidth: "1120px" }}>
       <Grid container spacing={3} display="flex">
         <Grid
-          size={{ xs: 12, sm: 6 }}
+          size={{ xs: 12, md: 6 }}
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -81,7 +81,7 @@ const DesignSystemOverviewPage = () => {
           </Typography>
         </Grid>
         <Grid
-          size={{ xs: 12, sm: 6 }}
+          size={{ xs: 12, md: 6 }}
           sx={{
             display: "flex",
             flexDirection: "column",

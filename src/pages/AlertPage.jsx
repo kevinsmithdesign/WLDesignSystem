@@ -17,6 +17,8 @@ import SuccessIcon from "../icons/SuccessIcon";
 import InfoIcon from "../icons/InfoIcon";
 import ErrorIcon from "../icons/ErrorIcon";
 
+import UsageCard from "../components/UsageCard";
+
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -41,6 +43,62 @@ function a11yProps(index) {
 }
 
 const AlertPage = () => {
+  const buttonTypes = [
+    {
+      // showComponent: <Button variant="contained">Primary</Button>,
+      showComponent: "",
+      title: "Success Alert",
+      subTitle: "When to use",
+      bullets: [
+        "Use success alerts to confirm that a user action was successful.",
+        "This type of alert is often seen after form submissions, API calls, or task completions (e.g., “Profile updated successfully” or “Your message has been sent”).",
+        "Success alerts can be dismissible if the message is purely informational and doesn’t require further action.",
+      ],
+    },
+    {
+      // showComponent: <Button variant="outlined">Secondary</Button>,
+      showComponent: "",
+      title: "Info Alert",
+      subTitle: "When to use",
+
+      bullets: [
+        "Use an information alert to provide neutral or helpful information that users may need to be aware of but doesn't require immediate action.",
+        "Best for displaying messages that inform users about system status, updates, or general information (e.g., “New version available”, “Your session will expire in 10 minutes”, or “This feature is currently in beta”).",
+        "Information alerts are typically lower priority and should not be disruptive to the user experience.",
+      ],
+    },
+    {
+      // showComponent: (
+      //   <Button variant="contained" disabled>
+      //     Disabled
+      //   </Button>
+      // ),
+      showComponent: "",
+      title: "Warning Alert",
+      subTitle: "When to use",
+      bullets: [
+        "Use warning alerts to inform users about something that requires attention but is not critical.",
+        "Ideal for highlighting potential issues that need review or caution (e.g., “Your subscription is about to expire” or “This action cannot be undone”).",
+        "Warning alerts are a good middle-ground between information and error, allowing users to act before it turns into an issue.",
+      ],
+    },
+    {
+      // showComponent: (
+      //   <Button variant="contained" color="error">
+      //     Delete
+      //   </Button>
+      // ),
+      showComponent: "",
+      title: "Error Alert",
+      subTitle: "When to use",
+      bullets: [
+        "Use error alerts when something has gone wrong or requires immediate action.",
+        "Commonly used for form validation errors (e.g., “Invalid email address”) or system failures (e.g., “Failed to connect to server”).",
+        "Error alerts should be prominent, with strong visual cues like red coloring and an icon, to draw attention to the issue.",
+      ],
+    },
+  ];
+
   const theme = useTheme();
 
   const [value, setValue] = React.useState(0);
@@ -135,6 +193,17 @@ const AlertPage = () => {
             </Alert>
           </Stack>
         </Box>
+        <>
+          {buttonTypes.map((buttonType, index) => (
+            <UsageCard
+              key={index}
+              // showComponent={buttonType.showComponent}
+              title={buttonType.title}
+              subTitle={buttonType.subTitle}
+              bullets={buttonType.bullets}
+            />
+          ))}
+        </>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         Code

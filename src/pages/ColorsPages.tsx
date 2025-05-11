@@ -104,6 +104,11 @@ const ColorPage = () => {
       title: "Primary Colors",
       colors: [
         {
+          title: "Primary Light",
+          backgroundColor: theme.palette.primary.light,
+          token: "theme.palette.primary.light",
+        },
+        {
           title: "Primary Main",
           backgroundColor: theme.palette.primary.main,
           token: "theme.palette.primary.main",
@@ -113,16 +118,16 @@ const ColorPage = () => {
           backgroundColor: theme.palette.primary.dark,
           token: "theme.palette.primary.dark",
         },
-        {
-          title: "Primary Light",
-          backgroundColor: theme.palette.primary.light,
-          token: "theme.palette.primary.light",
-        },
       ],
     },
     {
       title: "Secondary Colors",
       colors: [
+        {
+          title: "Secondary Light",
+          backgroundColor: theme.palette.secondary.light,
+          token: "theme.palette.secondary.light",
+        },
         {
           title: "Secondary Main",
           backgroundColor: theme.palette.secondary.main,
@@ -133,16 +138,16 @@ const ColorPage = () => {
           backgroundColor: theme.palette.secondary.dark,
           token: "theme.palette.secondary.dark",
         },
-        {
-          title: "Secondary Light",
-          backgroundColor: theme.palette.secondary.light,
-          token: "theme.palette.secondary.light",
-        },
       ],
     },
     {
       title: "Success Colors",
       colors: [
+        {
+          title: "Success Light",
+          backgroundColor: theme.palette.success.light,
+          token: "theme.palette.success.light",
+        },
         {
           title: "Success Main",
           backgroundColor: theme.palette.success.main,
@@ -153,16 +158,16 @@ const ColorPage = () => {
           backgroundColor: theme.palette.success.dark,
           token: "theme.palette.success.dark",
         },
-        {
-          title: "Success Light",
-          backgroundColor: theme.palette.success.light,
-          token: "theme.palette.success.light",
-        },
       ],
     },
     {
       title: "Warning Colors",
       colors: [
+        {
+          title: "Warning Light",
+          backgroundColor: theme.palette.warning.light,
+          token: "theme.palette.warning.light",
+        },
         {
           title: "Warning Main",
           backgroundColor: theme.palette.warning.main,
@@ -173,16 +178,16 @@ const ColorPage = () => {
           backgroundColor: theme.palette.warning.dark,
           token: "theme.palette.warning.dark",
         },
-        {
-          title: "Warning Light",
-          backgroundColor: theme.palette.warning.light,
-          token: "theme.palette.warning.light",
-        },
       ],
     },
     {
       title: "Error Colors",
       colors: [
+        {
+          title: "Error Light",
+          backgroundColor: theme.palette.error.light,
+          token: "theme.palette.error.light",
+        },
         {
           title: "Error Main",
           backgroundColor: theme.palette.error.main,
@@ -193,16 +198,16 @@ const ColorPage = () => {
           backgroundColor: theme.palette.error.dark,
           token: "theme.palette.error.dark",
         },
-        {
-          title: "Error Light",
-          backgroundColor: theme.palette.error.light,
-          token: "theme.palette.error.light",
-        },
       ],
     },
     {
       title: "Info Colors",
       colors: [
+        {
+          title: "Info Light",
+          backgroundColor: theme.palette.info.light,
+          token: "theme.palette.info.light",
+        },
         {
           title: "Info Main",
           backgroundColor: theme.palette.info.main,
@@ -212,11 +217,6 @@ const ColorPage = () => {
           title: "Info Dark",
           backgroundColor: theme.palette.info.dark,
           token: "theme.palette.info.dark",
-        },
-        {
-          title: "Info Light",
-          backgroundColor: theme.palette.info.light,
-          token: "theme.palette.info.light",
         },
       ],
     },
@@ -245,12 +245,17 @@ const ColorPage = () => {
   return (
     <Stack sx={{ maxWidth: "1120px", mb: 8 }}>
       <Grid container spacing={2}>
-        <Grid size={{ xs: 12, md: 6 }}>
-          <Typography variant="h2" fontWeight="bold" mb={3}>
+        <Grid size={{ xs: 12, sm: 6 }}>
+          <Typography
+            variant="h2"
+            fontWeight="bold"
+            mb={{ xs: 1, sm: 3 }}
+            // mt={{ xs: 2, sm: 0 }}
+          >
             Colors
           </Typography>
         </Grid>
-        <Grid size={{ xs: 12, md: 6 }}>
+        <Grid size={{ xs: 12, sm: 6 }}>
           <Stack flexDirection="row" justifyContent="flex-end">
             <Button
               id="theme-menu-button"
@@ -263,6 +268,8 @@ const ColorPage = () => {
               endIcon={<KeyboardArrowDownIcon />}
               sx={{
                 fontWeight: "bold",
+                mb: { xs: 2, sm: 0 },
+                width: { xs: "100%", sm: "auto" },
                 "&:hover": {
                   boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
                 },
