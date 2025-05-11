@@ -64,7 +64,7 @@ const DesignSystemOverviewPage = () => {
     <Box sx={{ maxWidth: "1120px" }}>
       <Grid container spacing={3} display="flex">
         <Grid
-          size={{ xs: 12, md: 6 }}
+          size={{ xs: 12, lg: 6 }}
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -81,7 +81,7 @@ const DesignSystemOverviewPage = () => {
           </Typography>
         </Grid>
         <Grid
-          size={{ xs: 12, md: 6 }}
+          size={{ xs: 12, lg: 6 }}
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -121,11 +121,6 @@ const DesignSystemOverviewPage = () => {
                 <Alert severity="warning">This is a warning Alert.</Alert>
                 <Alert severity="error">This is an error Alert.</Alert>
               </Stack>
-              {/* <Stack sx={{ alignItems: "flex-end" }}>
-                <Typography variant="h1" fontWeight="bold" sx={{ mr: 3 }}>
-                  Aa
-                </Typography>
-              </Stack> */}
             </Box>
             <Box>
               <Stack

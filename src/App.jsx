@@ -19,7 +19,9 @@ import {
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useState } from "react";
 import { ThemeProviderDesignSystem, useTheme } from "./themes/ThemeContext";
-import LeftNav from "./components/Leftnav";
+// import LeftNav from "./components/Leftnav";
+import HamburgerMenu from "./components/HamburgerMenu";
+import PageWrapper from "./components/PageWrapper";
 
 // Available themes for the selector
 const themeOptions = ["Blue Print", "Greenhouse", "Spectrum", "Eclipse"];
@@ -72,7 +74,7 @@ const WhiteLabelContent = () => {
               THEME: {themeName}
             </Typography>
           </Stack>
-          <Stack>
+          <Stack display="flex" alignItem="center" justifyContent="center">
             <Button
               id="theme-menu-button"
               aria-controls={open ? "theme-menu" : undefined}
@@ -86,7 +88,7 @@ const WhiteLabelContent = () => {
                 background: theme.palette.primary.contrastText,
                 color: theme.palette.primary.main,
                 fontWeight: "bold",
-                display: { xs: "none", sm: "flex" },
+                display: { xs: "none", md: "flex" },
                 "&:hover": {
                   background: theme.palette.primary.contrastText,
                   boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
@@ -122,6 +124,9 @@ const WhiteLabelContent = () => {
                 </MenuItem>
               ))}
             </Menu>
+            <Stack sx={{ display: { xs: "flex", md: "none" } }}>
+              <HamburgerMenu />
+            </Stack>
           </Stack>
           <Stack
             sx={{
@@ -131,7 +136,8 @@ const WhiteLabelContent = () => {
           ></Stack>
         </Stack>
       </Stack>
-      <LeftNav />
+      <PageWrapper />
+      {/* <LeftNav /> */}
     </>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Typography, IconButton, Tooltip, Card, Box } from "@mui/material";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
@@ -8,22 +8,8 @@ const ColorCard = ({
   hex,
   copyValue,
   copySuccess,
-  setCopySuccess,
   handleCopy,
 }) => {
-  //   const [copySuccess, setCopySuccess] = useState(false);
-
-  //   const handleCopy = async (colorCode) => {
-  //         try {
-  //           await navigator.clipboard.writeText(colorCode);
-  //           setCopySuccess(true);
-  //           setTimeout(() => setCopySuccess(false), 2000);
-  //         } catch (err) {
-  //           console.error("Failed to copy!", err);
-  //         }
-  //       };
-  //   }
-
   return (
     <Card
       sx={{
@@ -42,7 +28,6 @@ const ColorCard = ({
           background: backgroundColor,
           borderRadius: "10px 10px 0px 0px",
           width: "100%",
-          // mb: 1,
           position: "relative",
         }}
       >
