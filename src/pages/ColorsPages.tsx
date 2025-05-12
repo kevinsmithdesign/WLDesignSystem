@@ -12,6 +12,7 @@ import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import ColorCard from "../components/ColorCard";
 import Grid from "@mui/material/Grid2";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import ColorUsageCard from "../components/ColorUsageCard";
 
 // Helper function to convert CSS color to hex if needed
 const toHex = (color) => {
@@ -242,16 +243,42 @@ const ColorPage = () => {
     },
   ];
 
+  const colorUsage = [
+    {
+      title: "Primary",
+      subTitle:
+        "Interactive elements and primary actions. Creates visual hierarchy and drives user engagement.",
+      usage: "Buttons, links, active states, focus indicators",
+      backgroundColor: theme.palette.primary.main,
+    },
+    {
+      title: "Success",
+      subTitle:
+        "Semantic color for positive states. Provides visual feedback for successful operations.",
+      usage: "Success states, confirmations",
+      backgroundColor: theme.palette.primary.main,
+    },
+    {
+      title: "Error",
+      subTitle:
+        "System feedback for errors and destructive actions. Alerts users to problems requiring immediate attention.",
+      usage: "Error states, validation messages, destructive actions",
+      backgroundColor: theme.palette.primary.main,
+    },
+    {
+      title: "Text Primary",
+      subTitle:
+        "High-contrast text for optimal legibility. Ensures content remains readable across all backgrounds.",
+      usage: "Body text, headings, labels, primary content",
+      backgroundColor: theme.palette.primary.main,
+    },
+  ];
+
   return (
     <Stack sx={{ maxWidth: "1120px", mb: 8 }}>
       <Grid container spacing={2}>
         <Grid size={{ xs: 12, sm: 6 }}>
-          <Typography
-            variant="h2"
-            fontWeight="bold"
-            mb={{ xs: 1, sm: 3 }}
-            // mt={{ xs: 2, sm: 0 }}
-          >
+          <Typography variant="h2" fontWeight="bold" mb={{ xs: 1, sm: 2 }}>
             Colors
           </Typography>
         </Grid>
@@ -307,28 +334,47 @@ const ColorPage = () => {
         predictable user experiences.
       </Typography>
 
-      {sections.map(({ title, colors }, sectionIndex) => (
-        <React.Fragment key={sectionIndex}>
-          <Typography variant="h6" mb={0.5}>
-            {title}
-          </Typography>
-          <Grid container spacing={2} mb={3}>
-            {colors.map(({ title, backgroundColor, token }, index) => (
-              <Grid size={{ xs: 12, sm: 6, md: 6, lg: 4 }} key={index}>
-                <ColorCard
-                  title={title}
-                  backgroundColor={backgroundColor}
-                  hex={getColorValue(backgroundColor, token)}
-                  copyValue={getColorValue(backgroundColor, token)}
-                  copySuccess={copySuccess}
-                  setCopySuccess={setCopySuccess}
-                  handleCopy={handleCopy}
-                />
-              </Grid>
-            ))}
+      <Stack mb={6}>
+        {sections.map(({ title, colors }, sectionIndex) => (
+          <React.Fragment key={sectionIndex}>
+            <Typography variant="h6" mb={0.5}>
+              {title}
+            </Typography>
+            <Grid container spacing={2} mb={3}>
+              {colors.map(({ title, backgroundColor, token }, index) => (
+                <Grid size={{ xs: 12, sm: 6, md: 6, lg: 4 }} key={index}>
+                  <ColorCard
+                    title={title}
+                    backgroundColor={backgroundColor}
+                    hex={getColorValue(backgroundColor, token)}
+                    copyValue={getColorValue(backgroundColor, token)}
+                    copySuccess={copySuccess}
+                    setCopySuccess={setCopySuccess}
+                    handleCopy={handleCopy}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+          </React.Fragment>
+        ))}
+      </Stack>
+
+      <Typography variant="h4" fontWeight="bold" mb={{ xs: 1, sm: 1 }}>
+        Key Color Usage
+      </Typography>
+      <Grid container spacing={2}>
+        {colorUsage.map(({ title, subTitle, usage, backgroundColor }) => (
+          <Grid size={{ xs: 12, sm: 6, md: 6, lg: 4 }}>
+            <ColorUsageCard
+              // index={index}
+              title={title}
+              subTitle={subTitle}
+              usage={usage}
+              backgroundColor={backgroundColor}
+            />
           </Grid>
-        </React.Fragment>
-      ))}
+        ))}
+      </Grid>
     </Stack>
   );
 };

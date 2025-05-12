@@ -21,7 +21,7 @@ const UsageCard = ({ index, title, subTitle, bullets, showComponent }) => {
 
               width: { xs: "100%", lg: "260px" },
               background: "#fafafa",
-              borderRadius: 3,
+              borderRadius: 2,
               mr: 3,
               display: "flex",
               alignItems: "center",

@@ -122,7 +122,7 @@ const ButtonPage = () => {
 
   return (
     <Stack sx={{ maxWidth: "1120px", mb: 8 }}>
-      <Typography variant="h2" fontWeight="bold" mb={3}>
+      <Typography variant="h2" fontWeight="bold" mb={2}>
         Button
       </Typography>
       <Typography mb={6}>

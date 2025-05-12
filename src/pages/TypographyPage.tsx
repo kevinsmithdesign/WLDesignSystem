@@ -165,7 +165,7 @@ const TypographyPage = () => {
 
   return (
     <Stack sx={{ maxWidth: "1120px", mb: 8 }}>
-      <Typography variant="h2" fontWeight="bold" mb={3}>
+      <Typography variant="h2" fontWeight="bold" mb={2}>
         Typography
       </Typography>
       <Typography variant="body2" mb={6}>

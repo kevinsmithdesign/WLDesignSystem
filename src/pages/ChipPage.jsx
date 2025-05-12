@@ -48,7 +48,7 @@ const ChipPage = () => {
 
   return (
     <Stack sx={{ maxWidth: "1120px", mb: 8 }}>
-      <Typography variant="h2" fontWeight="bold" mb={3}>
+      <Typography variant="h2" fontWeight="bold" mb={2}>
         Chip
       </Typography>
       <Typography mb={6}>Description</Typography>
