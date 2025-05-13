@@ -255,7 +255,7 @@ const ColorPage = () => {
       title: "Secondary",
       subTitle:
         "Supporting color used for complementary actions and elements. Provides secondary emphasis without competing with Primary.",
-      usage: "Secondary buttons, supporting elements, tabs, toggles",
+      usage: "Secondary buttons, supporting elements",
       backgroundColor: theme.palette.secondary.main,
     },
     {
@@ -341,7 +341,7 @@ const ColorPage = () => {
         </Grid>
       </Grid>
 
-      <Typography variant="body2" mb={4}>
+      <Typography variant="body1" mb={4}>
         Built on a foundation of design tokens, our color system scales from
         single products to multi-brand platforms. Each color serves a specific
         purpose, from semantic states to interactive feedback, creating

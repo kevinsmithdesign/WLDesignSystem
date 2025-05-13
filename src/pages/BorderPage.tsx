@@ -53,7 +53,7 @@ const BorderPage = () => {
       <Typography variant="h2" fontWeight="bold" mb={2}>
         Border Radius
       </Typography>
-      <Typography variant="body2" mb={4}>
+      <Typography variant="body1" mb={4}>
         Applied with intentional restraint, our radius values create visual
         softness from sharp edges to fully rounded elements. Each radius serves
         a specific purpose, from distinguishing interactive elements to creating

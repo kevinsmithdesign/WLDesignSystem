@@ -52,7 +52,7 @@ const SpacingPage = () => {
       <Typography variant="h2" fontWeight="bold" mb={2}>
         Spacing
       </Typography>
-      <Typography variant="body2" mb={6}>
+      <Typography variant="body1" mb={6}>
         Grounded in mathematical ratios, our spacing system creates breathing
         room from individual components to full layouts. Each space serves a
         specific purpose, from grouping related elements to defining clear

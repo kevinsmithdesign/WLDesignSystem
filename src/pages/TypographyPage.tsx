@@ -168,7 +168,7 @@ const TypographyPage = () => {
       <Typography variant="h2" fontWeight="bold" mb={2}>
         Typography
       </Typography>
-      <Typography variant="body2" mb={6}>
+      <Typography variant="body1" mb={6}>
         A systematic type scale establishes clear hierarchies and optimal
         reading experiences across devices. Each style serves a specific
         purpose, from heading emphasis to interface labeling, creating
