@@ -497,6 +497,9 @@ const ColorPage = () => {
           )
         )}
       </Grid>
+      <Typography variant="h3" fontWeight="bold" mb={{ xs: 1, sm: 2.5 }}>
+        Color Design Princples
+      </Typography>
       <Card
         sx={{
           p: 3,
@@ -505,9 +508,6 @@ const ColorPage = () => {
           borderRadius: "10px",
         }}
       >
-        <Typography variant="h4" mb={2}>
-          Color Design Principles
-        </Typography>
         <Stack mb={2}>
           <Typography variant="h6" mb={0.5}>
             Systematic

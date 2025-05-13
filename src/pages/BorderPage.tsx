@@ -3,6 +3,7 @@ import { Stack, Typography, Tabs, Tab, Box, Card, Alert } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import CodeSnippet from "../components/CodeSnippet";
 import Grid from "@mui/material/Grid2";
+import UsageCard from "../components/UsageCard";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -41,6 +42,295 @@ const borderRadius = [
 const BorderPage = () => {
   const theme = useTheme();
 
+  const borderUsage = [
+    {
+      showComponent: (
+        <>
+          <Box sx={{ position: "relative" }}>
+            <Box
+              sx={{
+                background: "rgba(0, 0, 0, 0.09)",
+                height: "32px",
+                width: "32px",
+                borderRadius: "50%",
+                position: "absolute",
+                left: "-13px",
+                top: "-13px",
+                zIndex: 100,
+              }}
+            ></Box>
+            <Box
+              sx={{
+                height: "48px",
+                width: "48px",
+                background: theme.palette.primary.main,
+                borderRadius: "2px",
+              }}
+            ></Box>
+          </Box>
+        </>
+      ),
+      title: "2px",
+      subTitle: "When to use",
+      bullets: [
+        "For subtle rounding on tight UI elements.",
+        "Ideal for inputs, checkboxes, or tables with a sharp aesthetic.",
+        "Maintains a clean and minimal look.",
+      ],
+    },
+    {
+      showComponent: (
+        <>
+          <Box sx={{ position: "relative" }}>
+            <Box
+              sx={{
+                background: "rgba(0, 0, 0, 0.09)",
+                // background: theme.palette.primary.light,
+                height: "32px",
+                width: "32px",
+                borderRadius: "50%",
+                position: "absolute",
+                left: "-13px",
+                top: "-13px",
+                zIndex: 100,
+              }}
+            ></Box>
+            <Box
+              sx={{
+                height: "48px",
+                width: "48px",
+                background: theme.palette.primary.main,
+                borderRadius: "4px",
+              }}
+            ></Box>
+          </Box>
+        </>
+      ),
+      title: "4px",
+      subTitle: "When to use",
+      bullets: [
+        "A standard small radius",
+        "Great for form fields, buttons, or tag elements.",
+        "Adds a bit of softness without losing structure.",
+      ],
+    },
+    {
+      showComponent: (
+        <>
+          <Box sx={{ position: "relative" }}>
+            <Box
+              sx={{
+                background: "rgba(0, 0, 0, 0.09)",
+                // background: theme.palette.primary.light,
+                height: "32px",
+                width: "32px",
+                borderRadius: "50%",
+                position: "absolute",
+                left: "-13px",
+                top: "-13px",
+                zIndex: 100,
+              }}
+            ></Box>
+            <Box
+              sx={{
+                height: "48px",
+                width: "48px",
+                background: theme.palette.primary.main,
+                borderRadius: "6px",
+              }}
+            ></Box>
+          </Box>
+        </>
+      ),
+      title: "6px",
+      subTitle: "When to use",
+      bullets: [
+        "Use for medium-rounded components.",
+        "Works well with cards, input groups, or tooltips.",
+        "Balanced between sharp and soft.",
+      ],
+    },
+    {
+      showComponent: (
+        <>
+          <Box sx={{ position: "relative" }}>
+            <Box
+              sx={{
+                background: "rgba(0, 0, 0, 0.09)",
+                // background: theme.palette.primary.light,
+                height: "32px",
+                width: "32px",
+                borderRadius: "50%",
+                position: "absolute",
+                left: "-13px",
+                top: "-13px",
+                zIndex: 100,
+              }}
+            ></Box>
+            <Box
+              sx={{
+                height: "48px",
+                width: "48px",
+                background: theme.palette.primary.main,
+                borderRadius: "8px",
+              }}
+            ></Box>
+          </Box>
+        </>
+      ),
+      title: "8px",
+      subTitle: "When to use",
+      bullets: [
+        "A versatile radius for most interactive components.",
+        "Ideal for buttons, modals, and containers.",
+        "Creates a modern, approachable feel.",
+      ],
+    },
+    {
+      showComponent: (
+        <>
+          <Box sx={{ position: "relative" }}>
+            <Box
+              sx={{
+                background: "rgba(0, 0, 0, 0.09)",
+                height: "32px",
+                width: "32px",
+                borderRadius: "50%",
+                position: "absolute",
+                left: "-13px",
+                top: "-13px",
+                zIndex: 100,
+              }}
+            ></Box>
+            <Box
+              sx={{
+                height: "48px",
+                width: "48px",
+                background: theme.palette.primary.main,
+                borderRadius: "10px",
+              }}
+            ></Box>
+          </Box>
+        </>
+      ),
+      title: "10px",
+      subTitle: "When to use",
+      bullets: [
+        "For prominent rounding on large elements.",
+        "Common in modern UI kits and mobile interfaces.",
+        "Use when you want to emphasize friendly design.",
+      ],
+    },
+    {
+      showComponent: (
+        <>
+          <Box sx={{ position: "relative" }}>
+            <Box
+              sx={{
+                background: "rgba(0, 0, 0, 0.09)",
+                // background: theme.palette.primary.light,
+                height: "32px",
+                width: "32px",
+                borderRadius: "50%",
+                position: "absolute",
+                left: "-13px",
+                top: "-13px",
+                zIndex: 100,
+              }}
+            ></Box>
+            <Box
+              sx={{
+                height: "48px",
+                width: "48px",
+                background: theme.palette.primary.main,
+                borderRadius: "12px",
+              }}
+            ></Box>
+          </Box>
+        </>
+      ),
+      title: "12px",
+      subTitle: "When to use",
+      bullets: [
+        "Use for cards or content blocks that need extra softness.",
+        "Often seen in onboarding, alerts, or stylized panels.",
+        "Provides a warm, relaxed aesthetic.",
+      ],
+    },
+    {
+      showComponent: (
+        <>
+          <Box sx={{ position: "relative" }}>
+            <Box
+              sx={{
+                background: "rgba(0, 0, 0, 0.09)",
+                // background: theme.palette.primary.light,
+                height: "32px",
+                width: "32px",
+                borderRadius: "50%",
+                position: "absolute",
+                left: "-13px",
+                top: "-13px",
+                zIndex: 100,
+              }}
+            ></Box>
+            <Box
+              sx={{
+                height: "48px",
+                width: "48px",
+                background: theme.palette.primary.main,
+                borderRadius: "16px",
+              }}
+            ></Box>
+          </Box>
+        </>
+      ),
+      title: "16px",
+      subTitle: "When to use",
+      bullets: [
+        "For highly rounded UI blocks.",
+        "Works well in marketing layouts or feature tiles.",
+        "Best used when designing for visual comfort.",
+      ],
+    },
+    {
+      showComponent: (
+        <>
+          <Box sx={{ position: "relative" }}>
+            <Box
+              sx={{
+                background: "rgba(0, 0, 0, 0.09)",
+                // background: theme.palette.primary.light,
+                height: "32px",
+                width: "32px",
+                borderRadius: "50%",
+                position: "absolute",
+                left: "-13px",
+                top: "-13px",
+                zIndex: 100,
+              }}
+            ></Box>
+            <Box
+              sx={{
+                height: "48px",
+                width: "48px",
+                background: theme.palette.primary.main,
+                borderRadius: "50%",
+              }}
+            ></Box>
+          </Box>
+        </>
+      ),
+      title: "50%",
+      subTitle: "When to use",
+      bullets: [
+        "For perfectly round shapes like avatars, icons, or floating buttons.",
+        "Automatically converts any square element into a circle.",
+        "Great for emphasis and focal points.",
+      ],
+    },
+  ];
+
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -56,8 +346,7 @@ const BorderPage = () => {
         Applied with intentional restraint, our radius values create visual
         softness from sharp edges to fully rounded elements. Each radius serves
         a specific purpose, from distinguishing interactive elements to creating
-        visual groupings, balancing modern aesthetics with functional
-        clarity.RetryClaude can make mistakes. Please double-check responses.
+        visual groupings, balancing modern aesthetics with functional clarity.
       </Typography>
       <Tabs
         value={value}
@@ -136,6 +425,18 @@ const BorderPage = () => {
             </Grid>
           ))}
         </Grid>
+        <Typography variant="h3" fontWeight="bold" mb={{ xs: 1, sm: 2.5 }}>
+          Guidelines & Rules
+        </Typography>
+        {borderUsage.map((buttonType, index) => (
+          <UsageCard
+            index={index}
+            showComponent={buttonType.showComponent}
+            title={buttonType.title}
+            subTitle={buttonType.subTitle}
+            bullets={buttonType.bullets}
+          />
+        ))}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         <Alert severity="info">Coming Soon!</Alert>
