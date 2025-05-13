@@ -3,6 +3,7 @@ import { Stack, Typography, Tabs, Tab, Box, Card, Alert } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import CodeSnippet from "../components/CodeSnippet";
 import Grid from "@mui/material/Grid2";
+import UsageCard from "../components/UsageCard";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -47,6 +48,161 @@ const SpacingPage = () => {
     setValue(newValue);
   };
 
+  const spacingUsage = [
+    {
+      showComponent: (
+        <Box
+          sx={{
+            height: "4px",
+            width: "4px",
+            borderRadius: "1px",
+            background: theme.palette.primary.main,
+          }}
+        />
+      ),
+      title: "4px",
+      subTitle: "When to use",
+      bullets: [
+        "For the tightest spacing needs.",
+        "Ideal for small gaps in compact layouts.",
+        "Use for dense UIs, icon padding, or inline elements.",
+      ],
+    },
+    {
+      showComponent: (
+        <Box
+          sx={{
+            height: "8px",
+            width: "8px",
+            borderRadius: "2px",
+            background: theme.palette.primary.main,
+          }}
+        />
+      ),
+      title: "8px",
+      subTitle: "When to use",
+      bullets: [
+        "For small padding or margins.",
+        "Commonly used between form fields or buttons in tight groups.",
+        "Works well for compact card layouts.",
+      ],
+    },
+    {
+      showComponent: (
+        <Box
+          sx={{
+            height: "16px",
+            width: "16px",
+            borderRadius: "3px",
+            background: theme.palette.primary.main,
+          }}
+        />
+      ),
+      title: "16px",
+      subTitle: "When to use",
+      bullets: [
+        "A versatile default spacing value.",
+        "Commonly used for separating content blocks.",
+        "Ideal for button groups, card padding, or modal spacing.",
+      ],
+    },
+    {
+      showComponent: (
+        <Box
+          sx={{
+            height: "24px",
+            width: "24px",
+            borderRadius: "4px",
+            background: theme.palette.primary.main,
+          }}
+        />
+      ),
+      title: "24px",
+      subTitle: "When to use",
+      bullets: [
+        "For medium vertical spacing between components.",
+        "Use between sections in cards or lists.",
+        "Helps create breathing room without overwhelming space.",
+      ],
+    },
+    {
+      showComponent: (
+        <Box
+          sx={{
+            height: "32px",
+            width: "32px",
+            borderRadius: "6px",
+            background: theme.palette.primary.main,
+          }}
+        />
+      ),
+      title: "32px",
+      subTitle: "When to use",
+      bullets: [
+        "For distinct visual separation.",
+        "Great for layout sections or between stacked components.",
+        "Common in page-level spacing between modules.",
+      ],
+    },
+    {
+      showComponent: (
+        <Box
+          sx={{
+            height: "40px",
+            width: "40px",
+            borderRadius: "6px",
+            background: theme.palette.primary.main,
+          }}
+        />
+      ),
+      title: "40px",
+      subTitle: "When to use",
+      bullets: [
+        "For generous padding around major components.",
+        "Often used in dashboard layouts and section headers.",
+        "Helps with spacious, open designs.",
+      ],
+    },
+    {
+      showComponent: (
+        <Box
+          sx={{
+            height: "48px",
+            width: "48px",
+            borderRadius: "6px",
+            background: theme.palette.primary.main,
+          }}
+        />
+      ),
+      title: "48px",
+      subTitle: "When to use",
+      bullets: [
+        "For separating major content zones.",
+        "Useful in responsive designs with generous whitespace.",
+        "Helps create clear breaks between sections.",
+      ],
+    },
+    {
+      showComponent: (
+        <Box
+          sx={{
+            height: "64px",
+            width: "64px",
+            borderRadius: "6px",
+            background: theme.palette.primary.main,
+          }}
+        />
+      ),
+      title: "64px",
+      subTitle: "When to use",
+      bullets: [
+        "For large layout spacing and page gutters.",
+        "Ideal in full-page sections or hero areas.",
+        "Supports a clean, modern layout with lots of air.",
+      ],
+    },
+  ];
+
   return (
     <Stack sx={{ maxWidth: "1120px", mb: 8 }}>
       <Typography variant="h2" fontWeight="bold" mb={2}>
@@ -69,7 +225,7 @@ const SpacingPage = () => {
       </Tabs>
 
       <CustomTabPanel value={value} index={0}>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} mb={4}>
           {spacing.map(({ size, pm }) => (
             <Grid
               size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
@@ -106,8 +262,6 @@ const SpacingPage = () => {
                       height: size,
                       width: size,
                       background: theme.palette.primary.light,
-                      // border: "1px solid #fff",
-                      // borderRadius: "2px",
                       borderRight: "1px solid #fff",
                       borderLeft: "1px solid #fff",
                     }}
@@ -123,6 +277,18 @@ const SpacingPage = () => {
             </Grid>
           ))}
         </Grid>
+        <Typography variant="h3" fontWeight="bold" mb={{ xs: 1, sm: 2.5 }}>
+          Guidelines & Rules
+        </Typography>
+        {spacingUsage.map((buttonType, index) => (
+          <UsageCard
+            index={index}
+            showComponent={buttonType.showComponent}
+            title={buttonType.title}
+            subTitle={buttonType.subTitle}
+            bullets={buttonType.bullets}
+          />
+        ))}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         <Alert severity="info">Coming Soon!</Alert>

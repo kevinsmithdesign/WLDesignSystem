@@ -462,7 +462,8 @@ const ColorPage = () => {
       </Stack>
 
       <Typography variant="h3" fontWeight="bold" mb={{ xs: 1, sm: 2.5 }}>
-        Color Usage
+        {/* Color Usage */}
+        Guidelines & Rules
       </Typography>
       <Typography variant="h6" mb={0.5}>
         Main Colors

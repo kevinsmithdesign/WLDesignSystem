@@ -444,11 +444,11 @@ const TypographyPage = () => {
         </Box>
         <>
           <Typography variant="h3" fontWeight="bold" mb={{ xs: 1, sm: 2.5 }}>
-            Typography Usage
+            Guidelines & Rules
           </Typography>
           {typographyUsage.map((buttonType, index) => (
             <UsageCard
-              key={index}
+              index={index}
               showComponent={buttonType.showComponent}
               title={buttonType.title}
               subTitle={buttonType.subTitle}

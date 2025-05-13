@@ -9,9 +9,9 @@ import {
   ListItemText,
 } from "@mui/material";
 
-const UsageCard = ({ index, title, subTitle, bullets, showComponent }) => {
+const UsageCard = ({ title, subTitle, bullets, showComponent }, index) => {
   return (
-    <Card sx={{ p: 4, boxShadow: "none", borderRadius: 3, mb: 3 }}>
+    <Card key={index} sx={{ p: 4, boxShadow: "none", borderRadius: 3, mb: 3 }}>
       <Stack flexDirection={{ xs: "column", lg: "row" }}>
         <Stack>
           <Box
