@@ -35,7 +35,6 @@ const borderRadius = [
   { size: "10px", pm: "large" },
   { size: "12px", pm: "extraLarge" },
   { size: "16px", pm: "xxl" },
-  // { size: "60px", pm: "round" },
   { size: "50%", pm: "circle" },
 ];
 

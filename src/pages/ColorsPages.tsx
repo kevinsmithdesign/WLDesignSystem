@@ -6,6 +6,7 @@ import {
   Select,
   MenuItem,
   Menu,
+  Card,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
@@ -288,6 +289,93 @@ const ColorPage = () => {
     },
   ];
 
+  const secondaryColorUsage = [
+    {
+      title: "Primary Light",
+      subTitle:
+        "Interactive elements in hover or inactive states. Provides a softer emphasis for primary UI elements and backgrounds.",
+      usage: "Hover states, backgrounds, secondary primary elements",
+      backgroundColor: theme.palette.primary.light,
+    },
+    {
+      title: "Primary Dark",
+      subTitle:
+        "Interactive elements in pressed or active states. Provides stronger emphasis and visual feedback during interaction.",
+      usage: "Pressed states, active indicators, strong focus rings",
+      backgroundColor: theme.palette.primary.dark,
+    },
+    {
+      title: "Secondary Light",
+      subTitle:
+        "Supporting elements that need subtle emphasis. Creates visual distinction without competing for attention with primary elements.",
+      usage: "Hover states for secondary items, subtle highlights",
+      backgroundColor: theme.palette.secondary.light,
+    },
+    {
+      title: "Secondary Dark",
+      subTitle:
+        "Active or pressed states for secondary elements. Provides clear feedback for interacting with complementary components.",
+      usage: "Active tabs, pressed secondary buttons, focus states",
+      backgroundColor: theme.palette.secondary.dark,
+    },
+    {
+      title: "Success Light",
+      subTitle:
+        "Subtle indication of successful states. Provides background emphasis for success messages without overwhelming the interface.",
+      usage: "Success message backgrounds, success indicators",
+      backgroundColor: theme.palette.success.light,
+    },
+    {
+      title: "Success Dark",
+      subTitle:
+        "Strong indication of success for interactive elements. Provides emphasis for critical success messaging and active states.",
+      usage: "Pressed success buttons, strong success indicators",
+      backgroundColor: theme.palette.success.dark,
+    },
+    {
+      title: "Warning Light",
+      subTitle:
+        "Subtle indication of cautionary states. Provides background emphasis for warning messages that require attention.",
+      usage: "Warning message backgrounds, caution indicators",
+      backgroundColor: theme.palette.warning.light,
+    },
+    {
+      title: "Warning Dark",
+      subTitle:
+        "Strong indication of warning for interactive elements. Provides emphasis for critical warning messaging and active states.",
+      usage: "Pressed warning buttons, strong warning indicators",
+      backgroundColor: theme.palette.warning.dark,
+    },
+    {
+      title: "Error Light",
+      subTitle:
+        "Subtle indication of error states. Provides background emphasis for error messages without overwhelming the interface.",
+      usage: "Error message backgrounds, form field errors",
+      backgroundColor: theme.palette.error.light,
+    },
+    {
+      title: "Error Dark",
+      subTitle:
+        "Strong indication of error for interactive elements. Provides emphasis for critical error messaging and active states.",
+      usage: "Pressed error buttons, strong error indicators",
+      backgroundColor: theme.palette.error.dark,
+    },
+    {
+      title: "Info Light",
+      subTitle:
+        "Subtle indication of informational states. Provides background emphasis for informational messages and notifications.",
+      usage: "Info message backgrounds, tooltip backgrounds",
+      backgroundColor: theme.palette.info.light,
+    },
+    {
+      title: "Info Dark",
+      subTitle:
+        "Strong indication of information for interactive elements. Provides emphasis for important informational content.",
+      usage: "Pressed info buttons, strong info indicators",
+      backgroundColor: theme.palette.info.dark,
+    },
+  ];
+
   return (
     <Stack sx={{ maxWidth: "1120px", mb: 8 }}>
       <Grid container spacing={2}>
@@ -373,14 +461,16 @@ const ColorPage = () => {
         ))}
       </Stack>
 
-      <Typography variant="h2" fontWeight="bold" mb={{ xs: 1, sm: 2 }}>
+      <Typography variant="h2" fontWeight="bold" mb={{ xs: 1, sm: 2.5 }}>
         Color Usage
       </Typography>
-      <Grid container spacing={2}>
+      <Typography variant="h6" mb={0.5}>
+        Main Colors
+      </Typography>
+      <Grid container spacing={2} mb={6}>
         {colorUsage.map(({ title, subTitle, usage, backgroundColor }) => (
           <Grid size={{ xs: 12, sm: 6, md: 6, lg: 4 }}>
             <ColorUsageCard
-              // index={index}
               title={title}
               subTitle={subTitle}
               usage={usage}
@@ -389,6 +479,62 @@ const ColorPage = () => {
           </Grid>
         ))}
       </Grid>
+      <Typography variant="h6" mb={0.5}>
+        Other Colors
+      </Typography>
+      <Grid container spacing={2} mb={6}>
+        {secondaryColorUsage.map(
+          ({ title, subTitle, usage, backgroundColor }) => (
+            <Grid size={{ xs: 12, sm: 6, md: 6, lg: 4 }}>
+              <ColorUsageCard
+                title={title}
+                subTitle={subTitle}
+                usage={usage}
+                backgroundColor={backgroundColor}
+              />
+            </Grid>
+          )
+        )}
+      </Grid>
+      <Card
+        sx={{
+          p: 3,
+          background: "#fff",
+          boxShadow: "none",
+          borderRadius: "10px",
+        }}
+      >
+        <Typography variant="h4" mb={2}>
+          Color Design Principles
+        </Typography>
+        <Stack mb={2}>
+          <Typography variant="h6" mb={0.5}>
+            Systematic
+          </Typography>
+          <Typography variant="body1" mb={1}>
+            Token-based architecture enables consistent application across
+            platforms and automatic theming capabilities.
+          </Typography>
+        </Stack>
+        <Stack mb={2}>
+          <Typography variant="h6" mb={0.5}>
+            Accessible
+          </Typography>
+          <Typography variant="body1" mb={1}>
+            Every color pairing meets WCAG 2.1 AA standards, with AAA compliance
+            for critical text elements.
+          </Typography>
+        </Stack>
+        <Stack mb={2}>
+          <Typography variant="h6" mb={0.5}>
+            Semantic
+          </Typography>
+          <Typography variant="body1" mb={1}>
+            Colors communicate meaning and state changes, creating predictable
+            patterns users can learn.
+          </Typography>
+        </Stack>
+      </Card>
     </Stack>
   );
 };
