@@ -100,7 +100,7 @@ const ColorUsageCard = ({ title, subTitle, usage, backgroundColor }) => {
         </Tooltip> */}
       </Box>
       <Box sx={{ py: 3, px: 3.5 }}>
-        <Typography variant="h5" fontWeight="bold" mb={0.5}>
+        <Typography variant="h5" fontWeight="bold" mb={1}>
           {title}
         </Typography>
         <Typography variant="body2" pb={3}>

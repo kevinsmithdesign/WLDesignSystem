@@ -376,6 +376,24 @@ const ColorPage = () => {
     },
   ];
 
+  const designPrinciples = [
+    {
+      title: "Systematic",
+      description:
+        "Token-based architecture enables consistent application across platforms and automatic theming capabilities.",
+    },
+    {
+      title: "Accessible",
+      description:
+        "Every color pairing meets WCAG 2.1 AA standards, with AAA compliance for critical text elements.",
+    },
+    {
+      title: "Semantic",
+      description:
+        "Colors communicate meaning and status. They create predictable patterns that help users understand and navigate the interface.",
+    },
+  ];
+
   return (
     <Stack sx={{ maxWidth: "1120px", mb: 8 }}>
       <Grid container spacing={2}>
@@ -498,9 +516,40 @@ const ColorPage = () => {
         )}
       </Grid>
       <Typography variant="h3" fontWeight="bold" mb={{ xs: 1, sm: 2.5 }}>
-        Color Design Princples
+        Color Design Principles
       </Typography>
-      <Card
+
+      <Grid container spacing={2}>
+        {designPrinciples.map(({ title, description }, index) => (
+          <Grid
+            key={index}
+            size={{ xs: 12, sm: 6, md: 6, lg: 4 }}
+            display="flex"
+            alignItems="stretch"
+          >
+            <Card
+              sx={{
+                p: 3,
+                background: "#fff",
+                boxShadow: "none",
+                borderRadius: "10px",
+                display: "flex",
+                flexDirection: "column",
+                flexGrow: 1,
+              }}
+            >
+              <Typography variant="h5" fontWeight="bold" mb={1}>
+                {title}
+              </Typography>
+              <Typography variant="body2" sx={{ flexGrow: 1 }}>
+                {description}
+              </Typography>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+
+      {/* <Card
         sx={{
           p: 3,
           background: "#fff",
@@ -535,7 +584,7 @@ const ColorPage = () => {
             patterns users can learn.
           </Typography>
         </Stack>
-      </Card>
+      </Card> */}
     </Stack>
   );
 };

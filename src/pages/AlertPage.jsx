@@ -43,10 +43,26 @@ function a11yProps(index) {
 }
 
 const AlertPage = () => {
+  const theme = useTheme();
+
   const buttonTypes = [
     {
-      // showComponent: <Button variant="contained">Primary</Button>,
-      showComponent: "",
+      showComponent: (
+        <Alert
+          severity="success"
+          sx={{ width: "80%" }}
+          icon={
+            <SuccessIcon
+              width="24px"
+              height="24px"
+              stroke={theme.palette.success.dark}
+            />
+          }
+        >
+          <AlertTitle>Success</AlertTitle>
+          Success Alert Description.
+        </Alert>
+      ),
       title: "Success Alert",
       subTitle: "When to use",
       bullets: [
@@ -56,8 +72,22 @@ const AlertPage = () => {
       ],
     },
     {
-      // showComponent: <Button variant="outlined">Secondary</Button>,
-      showComponent: "",
+      showComponent: (
+        <Alert
+          severity="info"
+          sx={{ width: "80%" }}
+          icon={
+            <InfoIcon
+              width="24px"
+              height="24px"
+              stroke={theme.palette.info.dark}
+            />
+          }
+        >
+          <AlertTitle>Info</AlertTitle>
+          Info Alert Description.
+        </Alert>
+      ),
       title: "Info Alert",
       subTitle: "When to use",
 
@@ -68,12 +98,22 @@ const AlertPage = () => {
       ],
     },
     {
-      // showComponent: (
-      //   <Button variant="contained" disabled>
-      //     Disabled
-      //   </Button>
-      // ),
-      showComponent: "",
+      showComponent: (
+        <Alert
+          severity="warning"
+          sx={{ width: "80%" }}
+          icon={
+            <WarningIcon
+              width="24px"
+              height="24px"
+              stroke={theme.palette.warning.dark}
+            />
+          }
+        >
+          <AlertTitle>Warning</AlertTitle>
+          Warning Alert Description.
+        </Alert>
+      ),
       title: "Warning Alert",
       subTitle: "When to use",
       bullets: [
@@ -88,7 +128,22 @@ const AlertPage = () => {
       //     Delete
       //   </Button>
       // ),
-      showComponent: "",
+      showComponent: (
+        <Alert
+          severity="error"
+          sx={{ width: "80%" }}
+          icon={
+            <ErrorIcon
+              width="24px"
+              height="24px"
+              stroke={theme.palette.error.dark}
+            />
+          }
+        >
+          <AlertTitle>Error</AlertTitle>
+          Error Alert Description.
+        </Alert>
+      ),
       title: "Error Alert",
       subTitle: "When to use",
       bullets: [
@@ -98,8 +153,6 @@ const AlertPage = () => {
       ],
     },
   ];
-
-  const theme = useTheme();
 
   const [value, setValue] = React.useState(0);
 
@@ -197,7 +250,7 @@ const AlertPage = () => {
           {buttonTypes.map((buttonType, index) => (
             <UsageCard
               key={index}
-              // showComponent={buttonType.showComponent}
+              showComponent={buttonType.showComponent}
               title={buttonType.title}
               subTitle={buttonType.subTitle}
               bullets={buttonType.bullets}
