@@ -252,25 +252,39 @@ const ColorPage = () => {
       backgroundColor: theme.palette.primary.main,
     },
     {
+      title: "Secondary",
+      subTitle:
+        "Supporting color used for complementary actions and elements. Provides secondary emphasis without competing with Primary.",
+      usage: "Secondary buttons, supporting elements, tabs, toggles",
+      backgroundColor: theme.palette.secondary.main,
+    },
+    {
+      title: "Text",
+      subTitle:
+        "High-contrast text for optimal legibility. Ensures content remains readable across all backgrounds.",
+      usage: "Body text, headings, labels, primary content",
+      backgroundColor: theme.palette.text.primary,
+    },
+    {
       title: "Success",
       subTitle:
-        "Semantic color for positive states. Provides visual feedback for successful operations.",
+        "Semantic color for positive states. Provides visual feedback for successful operations and task completions.",
       usage: "Success states, confirmations",
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: theme.palette.success.main,
+    },
+    {
+      title: "Warning",
+      subTitle:
+        "Communicates caution and potential issues. Indicates actions that require user attention before proceeding.",
+      usage: "Warning messages, caution states, important notifications",
+      backgroundColor: theme.palette.warning.main,
     },
     {
       title: "Error",
       subTitle:
         "System feedback for errors and destructive actions. Alerts users to problems requiring immediate attention.",
       usage: "Error states, validation messages, destructive actions",
-      backgroundColor: theme.palette.primary.main,
-    },
-    {
-      title: "Text Primary",
-      subTitle:
-        "High-contrast text for optimal legibility. Ensures content remains readable across all backgrounds.",
-      usage: "Body text, headings, labels, primary content",
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: theme.palette.error.main,
     },
   ];
 
@@ -359,8 +373,8 @@ const ColorPage = () => {
         ))}
       </Stack>
 
-      <Typography variant="h4" fontWeight="bold" mb={{ xs: 1, sm: 1 }}>
-        Key Color Usage
+      <Typography variant="h2" fontWeight="bold" mb={{ xs: 1, sm: 2 }}>
+        Color Usage
       </Typography>
       <Grid container spacing={2}>
         {colorUsage.map(({ title, subTitle, usage, backgroundColor }) => (
