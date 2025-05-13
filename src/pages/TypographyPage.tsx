@@ -2,19 +2,8 @@ import React from "react";
 import { Stack, Typography, Tabs, Tab, Box } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import CodeSnippet from "../components/CodeSnippet";
-import DesignSystemTitle from "../components/DesignSystemTitle";
 import Grid from "@mui/material/Grid2";
-
-// const typographyStyles = [
-//   { variant: "h1", label: "h1" },
-//   { variant: "h2", label: "h2" },
-//   { variant: "h3", label: "h3" },
-//   { variant: "h4", label: "h4" },
-//   { variant: "h5", label: "h5" },
-//   { variant: "h6", label: "h6" },
-//   { variant: "body1", label: "body1" },
-//   { variant: "body2", label: "body2" },
-// ];
+import UsageCard from "../components/UsageCard";
 
 const typographyVariants = [
   {
@@ -162,6 +151,99 @@ const TypographyPage = () => {
       quasi quidem quibusdam.
     </Typography>
   `;
+
+  const typographyUsage = [
+    {
+      showComponent: <Typography variant="h1">H1</Typography>,
+      title: "H1 Heading",
+      subTitle: "When to use",
+      bullets: [
+        "Use for the main page title or the most prominent heading.",
+        "Typically appears once per page for semantic hierarchy and accessibility.",
+        "Helps users quickly understand the main subject of the page.",
+      ],
+    },
+    {
+      showComponent: <Typography variant="h2">H2</Typography>,
+      title: "H2 Heading",
+      subTitle: "When to use",
+      bullets: [
+        "Use for section titles under the main H1 heading.",
+        "Helps divide content into meaningful parts.",
+        "Maintains a logical content structure.",
+      ],
+    },
+    {
+      showComponent: <Typography variant="h3">H3</Typography>,
+      title: "H3 Heading",
+      subTitle: "When to use",
+      bullets: [
+        "Use for sub-sections within an H2 section.",
+        "Ideal for organizing detailed information under a category.",
+        "Helps with visual scanning of nested content.",
+      ],
+    },
+    {
+      showComponent: <Typography variant="h4">H4</Typography>,
+      title: "H4 Heading",
+      subTitle: "When to use",
+      bullets: [
+        "Use when you need a heading within a card, modal, or widget.",
+        "itable for supporting elements like form titles or small blocks of content.",
+        "Less visually dominant than H1–H3.",
+      ],
+    },
+    {
+      showComponent: <Typography variant="h5">H5</Typography>,
+      title: "H5 Heading",
+      subTitle: "When to use",
+      bullets: [
+        "Use in compact areas like sidebars or tooltips.",
+        "Great for labeling small modules or inline content.",
+        "Maintains a lightweight hierarchy without being too bold.",
+      ],
+    },
+    {
+      showComponent: <Typography variant="h6">H6</Typography>,
+      title: "H6 Heading",
+      subTitle: "When to use",
+      bullets: [
+        "Use when you need the least visual emphasis in the heading group.",
+        "Useful for fine print titles, legal disclaimers, or subtle content dividers.",
+        "Avoid using for primary or even secondary information.",
+      ],
+    },
+    {
+      showComponent: <Typography variant="body1">body1</Typography>,
+      title: "Body1 Text",
+      subTitle: "When to use",
+      bullets: [
+        "Use for primary content like paragraphs, instructions, or descriptions.",
+        "Ideal for areas where readability and consistency matter most.",
+        "Should be your default body style.",
+      ],
+    },
+    {
+      showComponent: <Typography variant="body2">body2</Typography>,
+      title: "Body2 Text",
+      subTitle: "When to use",
+      bullets: [
+        "Use for supporting content such as captions, annotations, or metadata.",
+        "Slightly smaller than Body1 to differentiate importance.",
+        "Helps reduce visual noise while keeping context.",
+      ],
+    },
+    {
+      showComponent: <Typography variant="body3">body3</Typography>,
+      title: "Body3 Text",
+      subTitle: "When to use",
+      bullets: [
+        "Use for helper text, form hints, or legal disclaimers.",
+        "Best when text needs to be visible but not distracting.",
+        "Keep short to maintain legibility at smaller sizes.",
+      ],
+    },
+  ];
 
   return (
     <Stack sx={{ maxWidth: "1120px", mb: 8 }}>
@@ -360,6 +442,20 @@ const TypographyPage = () => {
             )
           )}
         </Box>
+        <>
+          <Typography variant="h3" fontWeight="bold" mb={{ xs: 1, sm: 2.5 }}>
+            Typography Usage
+          </Typography>
+          {typographyUsage.map((buttonType, index) => (
+            <UsageCard
+              key={index}
+              showComponent={buttonType.showComponent}
+              title={buttonType.title}
+              subTitle={buttonType.subTitle}
+              bullets={buttonType.bullets}
+            />
+          ))}
+        </>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         <Typography variant="h5" mb={3}>
