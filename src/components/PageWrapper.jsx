@@ -16,6 +16,7 @@ import ControlsPage from "../pages/ControlsPage";
 import DesignPrinciplesPage from "../pages/DesignPrinciplesPage";
 import LeftNavTwo from "./LeftNavTwo";
 import PageContent from "./PageContent";
+import CardPage from "../pages/CardPage";
 
 const PageWrapper = ({ isOpen, setIsOpen }) => {
   const location = useLocation();
@@ -90,6 +91,7 @@ const PageWrapper = ({ isOpen, setIsOpen }) => {
           <Route path="/text-field" element={<TextFieldPage />} />
           <Route path="/controls" element={<ControlsPage />} />
           <Route path="/alert" element={<AlertPage />} />
+          <Route path="/card" element={<CardPage />} />
           <Route path="/grid" element={<GridPage />} />
         </Routes>
       </PageContent>

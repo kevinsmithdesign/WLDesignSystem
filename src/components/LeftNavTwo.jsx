@@ -27,6 +27,7 @@ const LeftNavTwo = () => {
     { to: "/text-field", title: "TextField" },
     // { to: "/controls", title: "Controls" },
     { to: "/alert", title: "Alert" },
+    { to: "/card", title: "Card" },
   ];
 
   // Function to check if link is active
@@ -42,7 +43,7 @@ const LeftNavTwo = () => {
     <Box
       sx={{
         width: "260px",
-        height: "100%",
+        height: "100vh",
         background: "#fff",
         overflowY: "auto",
         overflowX: "hidden",
