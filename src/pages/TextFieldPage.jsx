@@ -1,5 +1,13 @@
 import React from "react";
-import { Stack, Typography, Tabs, Tab, Box, TextField } from "@mui/material";
+import {
+  Stack,
+  Typography,
+  Tabs,
+  Tab,
+  Box,
+  TextField,
+  Alert,
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import CodeSnippet from "../components/CodeSnippet";
 import UsageCard from "../components/UsageCard";
@@ -212,7 +220,7 @@ const TextFieldPage = () => {
         </>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Code
+        <Alert severity="info">Coming Soon!</Alert>
       </CustomTabPanel>
     </Stack>
   );

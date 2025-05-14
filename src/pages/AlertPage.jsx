@@ -259,7 +259,7 @@ const AlertPage = () => {
         </>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Code
+        <Alert severity="info">Coming Soon!</Alert>
       </CustomTabPanel>
     </Stack>
   );
